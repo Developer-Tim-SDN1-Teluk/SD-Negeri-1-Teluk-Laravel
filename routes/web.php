@@ -21,3 +21,6 @@ Route::get('/profile', function () {
 Route::get('/berita', function () {
     return view('berita');
 });
+Route::get('/kontak', function () {
+    return view('kontak');
+});
