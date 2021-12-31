@@ -11,16 +11,16 @@
 
     <!-- Favicons -->
     <link href="{{asset('')}}assets/img/kemendikbud.png" rel="icon">
-    
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS Files -->
-    <link href="{{asset('')}}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('')}}assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS-->
-    <link href="{{asset('')}}/css/style2.css" rel="stylesheet">
+    <link href="{{asset('')}}assets/css/style2.css" rel="stylesheet">
 
 </head>
 
