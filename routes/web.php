@@ -18,3 +18,6 @@ Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/berita', function () {
+    return view('berita');
+});
