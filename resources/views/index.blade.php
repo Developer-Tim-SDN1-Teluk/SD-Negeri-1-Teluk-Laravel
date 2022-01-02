@@ -73,6 +73,9 @@
                         </div>
                     </li>
                     <li><a href="kontak.html">Kontak</a></li>
+		    <li class="nav-item"><a href="/login" class="nav-link">
+                        <i class="bi bi-box-arrow-right"></i> Login </a>
+                    </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

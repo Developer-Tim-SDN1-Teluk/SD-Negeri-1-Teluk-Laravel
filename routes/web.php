@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +26,7 @@ Route::get('/berita', function () {
 Route::get('/kontak', function () {
     return view('kontak');
 });
+
+Route::get('/login', [LoginController::class, 'index']);
+ 
+Route::get('/register', [RegisterController::class, 'index']);
