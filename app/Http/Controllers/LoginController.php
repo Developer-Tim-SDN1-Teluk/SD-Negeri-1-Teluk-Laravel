@@ -27,12 +27,16 @@ class LoginController extends Controller
 
         try{
             $akun = $request->only('email','password');
-            $register = User::create([
-                'name' => 'admin',
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role_id' => 1
-            ]);
+            if(Auth::attempt($akun)){
+                $AuthUser = Auth::user();
+                if(Auth::user()->role_id==1){
+                    return redirect() -> route('adm.dashboardadmin');
+                }else{
+                    return redirect() -> route('home');
+                }
+            } else {
+                return redirect() -> route('login') -> with(['error' => 'Wrong email or password!']);
+            }
         }catch(QueryException $e){
             // return response()->json([
             //     'message' => "Failed " . $e->errorInfo
