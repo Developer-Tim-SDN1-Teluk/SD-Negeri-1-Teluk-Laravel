@@ -44,4 +44,11 @@ class LoginController extends Controller
             return redirect() -> route('login') -> with(['error' => $e->errorInfo]);
         }
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        Auth::logout();
+        return redirect()->route('dashboard');
+    }
 }
