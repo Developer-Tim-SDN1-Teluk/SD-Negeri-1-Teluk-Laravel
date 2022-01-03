@@ -12,4 +12,15 @@ class LoginController extends Controller
             'tittle' => 'Login'
         ]);
     }
+
+    public function login(Request $request)
+    {
+        // validasi data
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        
+    }
 }
