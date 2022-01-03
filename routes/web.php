@@ -27,6 +27,10 @@ Route::get('/kontak', function () {
     return view('kontak');
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::post('login',[LoginController::class,'login'])->name('loginFun');
+
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
  
 Route::get('/register', [RegisterController::class, 'index']);
