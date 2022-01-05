@@ -96,25 +96,18 @@
 
     {{-- Form Login --}}
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            <main class="form-signin">
-                <h1 class="h3 mb-3 fw-normal text-center">Please Login</h1>
-                <form action="{{ route('loginFun') }}" method="POST">
-                @csrf
+        <div class="col-md-5">
+            <main class="form-register">
+                <h1 class="h3 mb-3 fw-normal text-center">Forgot Password</h1>
+                <form>
                   <div class="form-floating">
-                    <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
+                        <input type="email" name="name" class="form-control" id="email" placeholder="name@example.com">
+                        <label for="email">Email address</label>
                   </div>
-                  <div class="form-floating">
-                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                  </div>
-                  <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                  <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Submit</button>
                 </form>
-                <small class="d-block text-center mt-3">Not Registered ? 
-                    <a href="/register">Register Now!</a></small>
-                    <small class="d-block text-center mt-3">Forgot Your Password ? 
-                    <a href="/forgotpass">Forgot my password</a></small>
+                <small class="d-block text-center mt-3">Have an account ? 
+                    <a href="/login">Login</a></small>
               </main>
         </div>
     </div>
