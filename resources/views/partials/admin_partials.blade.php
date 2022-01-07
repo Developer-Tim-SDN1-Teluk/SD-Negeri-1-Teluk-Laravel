@@ -342,6 +342,27 @@
 							</span>
 							<h4 class="text-section">Content Management</h4>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.sambutan' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#tables">
+								<i class="fas fa-table"></i>
+								<p>Dashboard</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="tables">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.sambutan' ? 'active' : null }}">
+										<a href="{{ route('adm.sambutan') }}">
+											<span class="sub-item">Sambutan</span>
+										</a>
+									</li>
+									<li>
+										<a href="tables/datatables.html">
+											<span class="sub-item">Datatables</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>

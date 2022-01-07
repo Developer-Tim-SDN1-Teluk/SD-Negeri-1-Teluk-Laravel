@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ForgotpassController;
+use App\Http\Controllers\ResetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +39,7 @@ Route::post('login',[LoginController::class,'login'])->name('loginFun');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
  
 Route::get('/register', [RegisterController::class, 'index']);
+
+Route::get('/forgotpass',[ForgotpassController::class, 'index']);
+
+Route::get('/reset',[ResetController::class, 'index']);
