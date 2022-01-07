@@ -26,6 +26,9 @@ Route::get('/berita', function () {
 Route::get('/kontak', function () {
     return view('kontak');
 });
+Route::get('/galerifoto', function () {
+    return view('galerifoto');
+});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
