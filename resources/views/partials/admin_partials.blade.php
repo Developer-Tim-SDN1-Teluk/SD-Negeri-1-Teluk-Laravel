@@ -384,6 +384,22 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.contentberita' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#tables">
+								<i class="fas fa-table"></i>
+								<p>Berita</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="tables">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.contentberita' ? 'active' : null }}">
+										<a href="{{ route('adm.contentberita') }}">
+											<span class="sub-item">Content Berita</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
