@@ -397,6 +397,11 @@
 											<span class="sub-item">Ruang Lab</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.ruangguru' ? 'active' : null }}">
+										<a href="{{ route('adm.ruangguru') }}">
+											<span class="sub-item">Ruang Guru</span>
+										</a>
+									</li>
 									<li>
 										<a href="tables/datatables.html">
 											<span class="sub-item">Datatables</span>
