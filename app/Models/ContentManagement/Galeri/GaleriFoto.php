@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\ContentManagement\Fasilitas;
+namespace App\Models\ContentManagement\Galeri;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

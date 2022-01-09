@@ -18,6 +18,8 @@ class CreateGaleriFotosTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('img');
+            $table->smallInteger('active');
+            $table->timestamps();
         });
     }
 

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanControll
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
+use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Dashboard Admin
@@ -33,5 +34,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
     // Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru',[RuangGuruController::class,'index'])->name('ruangguru');
-
+    // Galeri
+    //galeri foto
+    Route::get('/admin/galeri/galerifoto',[GaleriFotoController::class,'index'])->name('galerifoto');
 });
