@@ -7,6 +7,7 @@ use  App\Http\Controllers\Admin\ContentManagement\Dashboard\SambutanController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\PrestasiController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\EkstraController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\KantinController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
