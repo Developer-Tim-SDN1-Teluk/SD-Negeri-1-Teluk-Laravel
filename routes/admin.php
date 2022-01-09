@@ -19,7 +19,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
      // Conten Management Dashboard Guru dan Karyawan
-     Route::get('/admin/dashboard/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
+     Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
     // Content Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
 
