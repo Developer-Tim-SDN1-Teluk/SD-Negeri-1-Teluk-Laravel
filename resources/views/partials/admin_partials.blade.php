@@ -363,6 +363,27 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.gurudankaryawan' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#contentprofile">
+								<i class="fas fa-table"></i>
+								<p>Profile</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="contentprofile">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.gurudankaryawan' ? 'active' : null }}">
+										<a href="{{ route('adm.gurudankaryawan') }}">
+											<span class="sub-item">Guru dan Karyawan</span>
+										</a>
+									</li>
+									<li>
+										<a href="tables/datatables.html">
+											<span class="sub-item">Datatables</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentfasilitas">
 								<i class="fas fa-table"></i>
