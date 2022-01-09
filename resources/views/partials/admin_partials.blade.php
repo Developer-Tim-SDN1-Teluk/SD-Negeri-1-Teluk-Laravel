@@ -415,6 +415,22 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#contentfasilitas">
+								<i class="fas fa-table"></i>
+								<p>Galeri</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="contentfasilitas">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.ruanglab' ? 'active' : null }}">
+										<a href="{{ route('adm.ruanglab') }}">
+											<span class="sub-item">Galeri Foto</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.contentberita' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
