@@ -342,7 +342,8 @@
 							</span>
 							<h4 class="text-section">Content Management</h4>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.sambutan' ? 'active submenu' : null }}">
+						<li class="nav-item {{\Request::route()->getName() == 'adm.sambutan' || \Request::route()->getName() == 'adm.totalguru' ||
+							\Request::route()->getName() == 'adm.prestasi' || \Request::route()->getName() == 'adm.ekstra' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentdashboard">
 								<i class="fas fa-table"></i>
 								<p>Dashboard</p>
@@ -355,15 +356,25 @@
 											<span class="sub-item">Sambutan</span>
 										</a>
 									</li>
-									<li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
+									<li class="{{\Request::route()->getName() == 'adm.prestasi' ? 'active' : null }}">
+										<a href="{{ route('adm.prestasi') }}">
+											<span class="sub-item">Prestasi</span>
+										</a>
+									</li>
+									<li class="{{\Request::route()->getName() == 'adm.ekstra' ? 'active' : null }}">
+										<a href="{{ route('adm.ekstra') }}">
+											<span class="sub-item">Ekstrakulikuler</span>
+										</a>
+									</li>
+									<li class="{{\Request::route()->getName() == 'adm.totalguru' ? 'active' : null }}">
+										<a href="{{ route('adm.totalguru') }}">
+											<span class="sub-item">Total Guru, Karyawan, Siswa</span>
 										</a>
 									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.gurudankaryawan' ? 'active submenu' : null }}">
+						<li class="nav-item {{\Request::route()->getName() == 'adm.gurudankaryawan' || \Request::route()->getName() == 'adm.visidanmisi' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentprofile">
 								<i class="fas fa-table"></i>
 								<p>Profile</p>
@@ -381,15 +392,11 @@
 											<span class="sub-item">Visi dan Misi</span>
 										</a>
 									</li>
-									<li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
-										</a>
-									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' ? 'active submenu' : null }}">
+						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' || \Request::route()->getName() == 'adm.ruangguru'
+						|| \Request::route()->getName() == 'adm.kantin' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentfasilitas">
 								<i class="fas fa-table"></i>
 								<p>Fasilitas</p>
@@ -407,9 +414,9 @@
 											<span class="sub-item">Ruang Guru</span>
 										</a>
 									</li>
-									<li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
+									<li class="{{\Request::route()->getName() == 'adm.kantin' ? 'active' : null }}">
+										<a href="{{ route('adm.kantin') }}">
+											<span class="sub-item">Kantin</span>
 										</a>
 									</li>
 								</ul>
