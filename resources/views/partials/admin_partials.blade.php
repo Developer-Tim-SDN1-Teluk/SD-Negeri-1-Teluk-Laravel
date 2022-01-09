@@ -415,16 +415,16 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' ? 'active submenu' : null }}">
-							<a data-toggle="collapse" href="#contentfasilitas">
+						<li class="nav-item {{\Request::route()->getName() == 'adm.galerifoto' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#contentgaleri">
 								<i class="fas fa-table"></i>
 								<p>Galeri</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="contentfasilitas">
+							<div class="collapse" id="contentgaleri">
 								<ul class="nav nav-collapse">
-									<li class="{{\Request::route()->getName() == 'adm.ruanglab' ? 'active' : null }}">
-										<a href="{{ route('adm.ruanglab') }}">
+									<li class="{{\Request::route()->getName() == 'adm.galerifoto' ? 'active' : null }}">
+										<a href="{{ route('adm.galerifoto') }}">
 											<span class="sub-item">Galeri Foto</span>
 										</a>
 									</li>
