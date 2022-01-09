@@ -329,7 +329,7 @@
                     {{-- MENU UTAMA --}}
 					<ul class="nav nav-primary">
                         {{-- MENU --}}
-                        <li class="nav-item active">
+                        <li class="nav-item {{\Request::route()->getName() == 'adm.dashboardadmin' ? 'active submenu' : null }}">
 							<a href="{{ route('adm.dashboardadmin') }}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
