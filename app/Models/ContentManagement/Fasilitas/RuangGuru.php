@@ -5,7 +5,7 @@ namespace App\Models\ContentManagement\Fasilitas;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GaleriFoto extends Model
+class RuangGuru extends Model
 {
     use HasFactory;
 }

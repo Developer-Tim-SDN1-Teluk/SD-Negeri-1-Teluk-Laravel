@@ -329,7 +329,7 @@
                     {{-- MENU UTAMA --}}
 					<ul class="nav nav-primary">
                         {{-- MENU --}}
-                        <li class="nav-item active">
+                        <li class="nav-item {{\Request::route()->getName() == 'adm.dashboardadmin' ? 'active submenu' : null }}">
 							<a href="{{ route('adm.dashboardadmin') }}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -376,6 +376,11 @@
 											<span class="sub-item">Guru dan Karyawan</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.visidanmisi' ? 'active' : null }}">
+										<a href="{{ route('adm.visidanmisi') }}">
+											<span class="sub-item">Visi dan Misi</span>
+										</a>
+									</li>
 									<li>
 										<a href="tables/datatables.html">
 											<span class="sub-item">Datatables</span>
@@ -397,9 +402,30 @@
 											<span class="sub-item">Ruang Lab</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.ruangguru' ? 'active' : null }}">
+										<a href="{{ route('adm.ruangguru') }}">
+											<span class="sub-item">Ruang Guru</span>
+										</a>
+									</li>
 									<li>
 										<a href="tables/datatables.html">
 											<span class="sub-item">Datatables</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.galerifoto' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#contentgaleri">
+								<i class="fas fa-table"></i>
+								<p>Galeri</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="contentgaleri">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.galerifoto' ? 'active' : null }}">
+										<a href="{{ route('adm.galerifoto') }}">
+											<span class="sub-item">Galeri Foto</span>
 										</a>
 									</li>
 								</ul>
