@@ -23,6 +23,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
+    // Fasilitas Kantin
+    Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
      // Conten Management Dashboard Guru dan Karyawan
      Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
      // Content Management Dashboard Visi dan Misi
