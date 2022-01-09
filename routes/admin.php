@@ -7,6 +7,7 @@ use  App\Http\Controllers\Admin\ContentManagement\Dashboard\SambutanController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\EkstraController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
+use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 
@@ -21,6 +22,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
      // Conten Management Dashboard Guru dan Karyawan
      Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
+     // Content Management Dashboard Visi dan Misi
+     Route::get('/admin/profile/visidanmisi',[VisidanMisiController::class,'index'])->name('visidanmisi');
     // Content Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
     // Fasilitas Ruang Guru

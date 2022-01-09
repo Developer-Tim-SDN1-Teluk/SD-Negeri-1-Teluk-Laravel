@@ -376,6 +376,11 @@
 											<span class="sub-item">Guru dan Karyawan</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.visidanmisi' ? 'active' : null }}">
+										<a href="{{ route('adm.visidanmisi') }}">
+											<span class="sub-item">Visi dan Misi</span>
+										</a>
+									</li>
 									<li>
 										<a href="tables/datatables.html">
 											<span class="sub-item">Datatables</span>
