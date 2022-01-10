@@ -13,4 +13,9 @@ class GaleriVideoController extends Controller
         $data = GaleriVideo::where('active',1)->get();
         return view('admin.galeri.galerivideo',compact('data'));
     }
+
+    public function add()
+    {
+        return view('admin.galeri.galerivideo.add');
+    }
 }
