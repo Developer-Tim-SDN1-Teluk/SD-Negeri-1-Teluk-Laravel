@@ -464,6 +464,22 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.kontak' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#kontak">
+								<i class="fas fa-table"></i>
+								<p>Kontak</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="kontak">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.kontak' ? 'active' : null }}">
+										<a href="{{ route('adm.kontak') }}">
+											<span class="sub-item">Kontak</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
