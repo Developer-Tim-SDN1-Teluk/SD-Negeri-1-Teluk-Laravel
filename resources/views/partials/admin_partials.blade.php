@@ -366,6 +366,11 @@
 											<span class="sub-item">Ekstrakulikuler</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.header' ? 'active' : null }}">
+										<a href="{{ route('adm.header') }}">
+											<span class="sub-item">Header</span>
+										</a>
+									</li>
 									<li class="{{\Request::route()->getName() == 'adm.totalguru' ? 'active' : null }}">
 										<a href="{{ route('adm.totalguru') }}">
 											<span class="sub-item">Total Guru, Karyawan, Siswa</span>
