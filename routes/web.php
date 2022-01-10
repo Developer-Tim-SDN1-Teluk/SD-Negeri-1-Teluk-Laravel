@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ForgotpassController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,12 +33,15 @@ Route::get('/galerifoto', function () {
     return view('galerifoto');
 });
 
+// Fasilitas
+Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('login',[LoginController::class,'login'])->name('loginFun');
 
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
- 
+
 Route::get('/register', [RegisterController::class, 'index']);
 
 Route::get('/forgotpass',[ForgotpassController::class, 'index']);

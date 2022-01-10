@@ -26,8 +26,13 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
     // Conten Management Dashboard TotalGUru
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
+
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
+    // Add Fasilitas Ruang Lab
+    Route::get('/admin/fasilitas/ruanglab/add',[RuangLabController::class,'add'])->name('addruanglab');
+    Route::post('/admin/fasilitas/ruanglab/add',[RuangLabController::class,'store'])->name('storeruanglab');
+
     // Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
      // Conten Management Dashboard Guru dan Karyawan
