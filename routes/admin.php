@@ -3,18 +3,19 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController;
-use  App\Http\Controllers\Admin\ContentManagement\Dashboard\SambutanController;
-use  App\Http\Controllers\Admin\ContentManagement\Dashboard\PrestasiController;
-use  App\Http\Controllers\Admin\ContentManagement\Dashboard\EkstraController;
-use  App\Http\Controllers\Admin\ContentManagement\Dashboard\TotalGuruController;
-use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\KantinController;
-use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
-use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
-use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
-use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
-use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
+use  App\Http\Controllers\Admin\ContentManagement\Dashboard\EkstraController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
+use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
+use  App\Http\Controllers\Admin\ContentManagement\Dashboard\PrestasiController;
+use  App\Http\Controllers\Admin\ContentManagement\Dashboard\SambutanController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
+use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
+use  App\Http\Controllers\Admin\ContentManagement\Dashboard\TotalGuruController;
+use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
+use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Dashboard Admin
@@ -49,4 +50,6 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/galeri/galerifoto',[GaleriFotoController::class,'index'])->name('galerifoto');
      // Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
+     // Fasilitas Perpustakaan
+     Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
 });
