@@ -17,6 +17,7 @@
                         <th>Alamat</th>
                         <th>Email</th>
                         <th>Hp</th>
+                        <th>Active</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -29,6 +30,7 @@
                         <td>{{ $row->alamat }}</td>
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->hp }}</td>
+                        <td>{{ $row->active }}</td>
                         <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
                     </tr>
                     @endforeach

@@ -34,18 +34,15 @@ class KontakController extends Controller
             'alamat' =>  'required',
             'email' =>  'required',
             'hp' =>  'required',
-            
-           
         ]);
 
-       
-            $kontak = Kontak::create([
-                'title' => $request->title,
-                'alamat' => $request->alamat,
-                'email' => $request->email,
-                'hp' => $request->hp,
-                
-            ]);
+        $kontak = Kontak::create([
+            'title' => $request->title,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'hp' => $request->hp,
+            'active' => 1
+        ]);
         
 
         return redirect()->route('adm.kontak')

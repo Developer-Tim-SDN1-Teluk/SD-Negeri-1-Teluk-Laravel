@@ -19,6 +19,7 @@ class CreateKontaksTable extends Migration
             $table->text('alamat');
             $table->string('email');
             $table->string('hp'); 
+            $table->smallInteger('active');
             $table->timestamps();
         });
     }
