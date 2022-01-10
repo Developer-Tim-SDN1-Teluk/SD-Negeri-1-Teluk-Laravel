@@ -396,7 +396,7 @@
 							</div>
 						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.ruanglab' || \Request::route()->getName() == 'adm.ruangguru'
-						|| \Request::route()->getName() == 'adm.kantin' || \Request::route()->getName() == 'adm.mushola' ? 'active submenu' : null }}">
+						|| \Request::route()->getName() == 'adm.kantin' || \Request::route()->getName() == 'adm.mushola' || \Request::route()->getName() == 'adm.perpustakaan' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentfasilitas">
 								<i class="fas fa-table"></i>
 								<p>Fasilitas</p>
@@ -422,6 +422,11 @@
 									<li class="{{\Request::route()->getName() == 'adm.mushola' ? 'active' : null }}">
 										<a href="{{ route('adm.mushola') }}">
 											<span class="sub-item">Mushola</span>
+										</a>
+									</li>
+									<li class="{{\Request::route()->getName() == 'adm.perpustakaan' ? 'active' : null }}">
+										<a href="{{ route('adm.perpustakaan') }}">
+											<span class="sub-item">Perpustakaan</span>
 										</a>
 									</li>
 								</ul>
