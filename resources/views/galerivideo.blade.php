@@ -5,22 +5,22 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
-    <title>Galeri</title>
+    <title>Galeri Video SDN 1 TELUK</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     
     <!-- Favicons -->
-    <link href="assets/img/kemendikbud.png" rel="icon">
+    <link href="{{asset('')}}assets/img/kemendikbud.png" rel="icon">
     
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS Files -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('')}}assets/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS-->
-    <link href="assets/css/style2.css" rel="stylesheet">
+    <link href="{{asset('')}}assets/css/style2.css" rel="stylesheet">
     
 </head>
 
@@ -32,7 +32,7 @@
             <div class="logo">
                 <h1 class="text-light">
                     <a href="index.html">
-                        <img src="assets/img/logo2.png"></a>
+                        <img src="{{asset('')}}assets/img/logo2.png"></a>
                     </h1>
                 </div>
                 
