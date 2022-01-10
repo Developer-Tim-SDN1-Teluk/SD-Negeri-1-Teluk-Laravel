@@ -57,7 +57,7 @@
                             <div class="dropdown-content">
                                 <a href="">Perpustakaan</a>
                                 <a href="">Ruang Guru</a>
-                                <a href="{{route('mushola') }}">Mushola</a>
+                                <a href="">Mushola</a>
                                 <a href="">Kantin</a>
                                 <a href="{{ route('ruanglab') }}">Ruang Lab</a>
                             </div>
