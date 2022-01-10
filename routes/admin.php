@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
 use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
+use App\Http\Controllers\Admin\ContentManagement\User\UserController;
+
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Dashboard Admin
@@ -87,4 +89,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       Route::get('/admin/kontak/add',[KontakController::class,'add'])->name('addkontak');
      Route::post('/admin/kontak/add',[KontakController::class,'store'])->name('storekontak');
 
+    // User
+      Route::get('/admin/user',[UserController::class,'index'])->name('user');
+      Route::get('/admin/user/add',[UserController::class,'add'])->name('adduser');
+      Route::post('/admin/user/add',[UserController::class,'store'])->name('storeuser');
+      
 });

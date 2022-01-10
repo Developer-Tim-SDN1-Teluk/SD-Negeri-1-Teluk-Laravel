@@ -490,6 +490,22 @@
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.user' ? 'active submenu' : null }}">
+							<a data-toggle="collapse" href="#user">
+								<i class="fas fa-table"></i>
+								<p>User</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="user">
+								<ul class="nav nav-collapse">
+									<li class="{{\Request::route()->getName() == 'adm.user' ? 'active' : null }}">
+										<a href="{{ route('adm.user') }}">
+											<span class="sub-item">User management</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
