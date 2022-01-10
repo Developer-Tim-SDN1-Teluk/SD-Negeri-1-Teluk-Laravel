@@ -440,6 +440,11 @@
 											<span class="sub-item">Galeri Foto</span>
 										</a>
 									</li>
+									<li class="{{\Request::route()->getName() == 'adm.galerivideo' ? 'active' : null }}">
+										<a href="{{ route('adm.galerivideo') }}">
+											<span class="sub-item">Galeri Video</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
