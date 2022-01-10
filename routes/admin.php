@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Dashboard Admin
@@ -46,4 +47,6 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Galeri
     //galeri foto
     Route::get('/admin/galeri/galerifoto',[GaleriFotoController::class,'index'])->name('galerifoto');
+     // Fasilitas Mushola
+     Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
 });
