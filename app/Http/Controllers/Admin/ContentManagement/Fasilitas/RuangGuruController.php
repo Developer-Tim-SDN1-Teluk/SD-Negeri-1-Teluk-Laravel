@@ -45,13 +45,6 @@ class RuangGuruController extends Controller
             'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
         ]);
 
-        $file = RuangGuru::where('id',$request->id)->first();
-        $file->title=$request->title;
-        $file->content=$request->content;
-        $file->active = 1;
-        $file->img = $request->gambar;
-        
-  
         if($request->hasFile('image')) {
             foreach($request->file('image') as $file)
             {
@@ -59,12 +52,21 @@ class RuangGuruController extends Controller
                 $file->move(public_path().'/img/photo/', $name);
                 $data[] = $name;
             }
-
-            
+            $file = RuangGuru::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
             $file->img = json_encode($data);
-            
+            $file->save();
+        }else{
+            $ruangguru = RuangGuru::where('id',$request->id)->first();
+            $ruangguru->title=$request->title;
+            $ruangguru->content=$request->content;
+            $ruangguru->active = 1;
+            $ruangguru->img = $request->gambar;
+            $ruangguru->update();
         }
-        $file->update();
+        
         return redirect()->route('adm.ruangguru')
                         ->with('success','Berhasil Tambah Data');
     }
