@@ -25,6 +25,49 @@ class VisidanMisiController extends Controller
         return view('admin.profile.visimisi.add');
     }
 
+    public function edit($id)
+    {
+        $visimisi = VisidanMisi::findorfail($id);
+        return view('admin.profile.visimisi.edit',compact('visimisi'));
+       
+                        
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+        $request->validate([
+            'title' =>  'required',
+            'content' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+        ]);
+
+        if($request->hasFile('image')) {
+            foreach($request->file('image') as $file)
+            {
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
+                $file->move(public_path().'/img/photo/', $name);
+                $data[] = $name;
+            }
+            $file = VisidanMisi::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
+            $file->img = json_encode($data);
+            $file->save();
+        }else{
+            $visimisi = VisidanMisi::where('id',$request->id)->first();
+            $visimisi->title=$request->title;
+            $visimisi->content=$request->content;
+            $visimisi->active = 1;
+            $visimisi->img = $request->gambar;
+            $visimisi->update();
+        }
+        
+        return redirect()->route('adm.visidanmisi')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
     public function store(Request $request)
     {
         // Validasi
@@ -56,7 +99,7 @@ class VisidanMisiController extends Controller
             ]);
         }
 
-        return redirect()->route('adm.visimisi')
+        return redirect()->route('adm.visidanmisi')
                         ->with('success','Berhasil Tambah Data');
 
     }
