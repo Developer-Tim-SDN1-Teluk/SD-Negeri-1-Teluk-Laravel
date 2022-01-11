@@ -18,9 +18,7 @@ class CreateKontaksTable extends Migration
             $table->string('title');
             $table->text('alamat');
             $table->string('email');
-            $table->string('hp');
-            $table->string('img');
-            $table->smallInteger('active');
+            $table->string('hp'); 
             $table->timestamps();
         });
     }

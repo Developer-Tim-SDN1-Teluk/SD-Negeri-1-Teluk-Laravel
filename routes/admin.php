@@ -24,6 +24,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin',[DashboardController::class,'index'])->name('dashboardadmin');
     // Conten Management Dashboard Sambutan
     Route::get('/admin/dashboard/sambutan',[SambutanController::class,'index'])->name('sambutan');
+    //add dashboard sambutan
+    Route::get('/admin/dashboard/sambutan/add',[SambutanController::class,'add'])->name('addsambutan');
+    Route::post('/admin/dashboard/sambutan/add',[SambutanController::class,'store'])->name('storesambutan');
     // Conten Management Dashboard Prestasi
     Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
     // Conten Management Dashboard Ekstrakulikuler
@@ -60,8 +63,15 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/galeri/galerivideo',[GaleriVideoController::class,'index'])->name('galerivideo');
      // Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
+     // Add Fasilitas Mushola
+     Route::get('/admin/fasilitas/mushola/add',[MusholaController::class,'add'])->name('addmushola');
+     Route::post('/admin/fasilitas/mushola/add',[MusholaController::class,'store'])->name('storemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
       // Kontak
       Route::get('/admin/kontak',[KontakController::class,'index'])->name('kontak');
+      // Add Kontak
+      Route::get('/admin/kontak/add',[KontakController::class,'add'])->name('addkontak');
+     Route::post('/admin/kontak/add',[KontakController::class,'store'])->name('storekontak');
+
 });

@@ -15,7 +15,6 @@ class CreateSambutansTable extends Migration
     {
         Schema::create('sambutans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
             $table->string('title');
             $table->text('content');
             $table->string('img');
