@@ -58,8 +58,12 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::get('/admin/profile/visidanmisi/add',[VisidanMisiController::class,'add'])->name('addvisidanmisi');
      Route::post('/admin/profile/visidanmisi/add',[VisidanMisiController::class,'store'])->name('storevisidanmisi');
      
-    // Content Berita
+    // Content Management Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
+    //Add Content Berita
+    Route::get('/admin/berita/contentberita/add',[ContentBeritaController::class,'add'])->name('addcontentberita');
+    Route::post('/admin/berita/contentberita/add',[ContentBeritaController::class,'store'])->name('storecontentberita');
+
     // Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru',[RuangGuruController::class,'index'])->name('ruangguru');
       // Add Fasilitas Ruang Guru          
