@@ -65,6 +65,10 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Add Fasilitas Ruang Guru          
     Route::get('/admin/fasilitas/ruangguru/add',[RuangGuruController::class,'add'])->name('addruangguru');
     Route::post('/admin/fasilitas/ruangguru/add',[RuangGuruController::class,'store'])->name('storeruangguru');
+    // Edit Fasilitas Ruang Guru
+    Route::get('/admin/fasilitas/ruangguru/edit/{id}',[RuangGuruController::class,'edit'])->name('editruangguru');
+    Route::post('/admin/fasilitas/ruangguru/update/{id}',[RuangGuruController::class,'update'])->name('updateruangguru');
+
 
     // Galeri
     //galeri foto

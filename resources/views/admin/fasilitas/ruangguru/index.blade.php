@@ -31,7 +31,8 @@
                         @if (!empty($row->img))
                         <td>
                             @foreach (json_decode($row->img) as $image)
-                            <a href="{{ url('img/photo/' . $image) }}"><img
+                            <a href="{{ url('img/photo/' . $image) }}">
+                                <img
                                     src="{{ url('img/photo/' . $image) }}" width="150px"
                                     alt="{{ $image }}"></a>
                             @endforeach
@@ -48,7 +49,11 @@
                             @endif
                         </td>
 
-                        <td><a href="" class="btn btn-primary btn-sm" >Detail</a></td>
+                        <td>
+                            <a href="" class="btn btn-primary btn-sm" >Detail</a>
+                            <a href="{{ route('adm.editruangguru',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="" class=" btn btn-danger btn-sm">Delete</a>
+                        </td>
                         
 
                     </tr>
