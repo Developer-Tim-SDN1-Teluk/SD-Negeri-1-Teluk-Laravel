@@ -63,6 +63,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     //Add Content Berita
     Route::get('/admin/berita/contentberita/add',[ContentBeritaController::class,'add'])->name('addcontentberita');
     Route::post('/admin/berita/contentberita/add',[ContentBeritaController::class,'store'])->name('storecontentberita');
+    // Edit Fasilitas Ruang Guru
+    Route::get('/admin/berita/contentberita/edit/{id}',[ContentBeritaController::class,'edit'])->name('editcontentberita');
+    Route::post('/admin/berita/contentberita/update/{id}',[ContentBeritaController::class,'update'])->name('updatecontentberita');
 
     // Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru',[RuangGuruController::class,'index'])->name('ruangguru');
