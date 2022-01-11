@@ -16,6 +16,7 @@ use  App\Http\Controllers\Admin\ContentManagement\Dashboard\TotalGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
+use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Dashboard Admin
@@ -52,4 +53,6 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
+      // Kontak
+      Route::get('/admin/kontak',[KontakController::class,'index'])->name('kontak');
 });
