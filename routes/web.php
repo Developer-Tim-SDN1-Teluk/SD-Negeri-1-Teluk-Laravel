@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ForgotpassController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgotpassController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,7 @@ Route::get('/galerifoto', function () {
 
 // Fasilitas
 Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
+Route::get('/fasilitas/ruangguru',[RuangGuruController::class,'userview'])->name('ruangguru');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
