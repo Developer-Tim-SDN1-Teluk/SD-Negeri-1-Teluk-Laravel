@@ -109,7 +109,11 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
 
     // User
       Route::get('/admin/user',[UserController::class,'index'])->name('user');
+      // Add User
       Route::get('/admin/user/add',[UserController::class,'add'])->name('adduser');
       Route::post('/admin/user/add',[UserController::class,'store'])->name('storeuser');
+      // Edit User
+      Route::get('/admin/user/edit/{id}',[UserController::class,'edit'])->name('edituser');
+      Route::post('/admin/user/edit/{id}',[UserController::class,'update'])->name('updateuser');
       
 });

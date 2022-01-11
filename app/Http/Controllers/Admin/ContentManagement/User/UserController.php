@@ -20,6 +20,13 @@ class UserController extends Controller
         return view('admin.user.add');
     }
 
+    public function edit($id)
+    {
+        $user = User::findorfail($id);
+        return view('admin.user.edit',compact('user'));
+                        
+    }
+
     public function store(Request $request)
     {
         // Validasi
@@ -41,4 +48,23 @@ class UserController extends Controller
                         ->with('success','Berhasil Tambah Data');
 
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' =>  'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+            $user = User::where('id',$request->id)->first();
+            $user->name=$request->name;
+            $user->email=$request->email;
+            $user->password = $request->password;
+            $user->update();
+        
+        
+        return redirect()->route('adm.user')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
 }

@@ -17,6 +17,7 @@
                         <th>Email</th>
                         <th>Role Id</th>
                         <th>Created</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,10 @@
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->role_id }}</td>
                         <td>{{ $row->created_at }}</td>
+                        <td>
+                            <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="" class=" btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
