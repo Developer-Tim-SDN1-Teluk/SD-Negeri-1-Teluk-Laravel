@@ -8,6 +8,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotpassController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
+use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,9 @@ Route::get('/galerifoto', function () {
 // Fasilitas
 Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
 Route::get('/fasilitas/ruangguru',[RuangGuruController::class,'userview'])->name('ruangguru');
+
+// Profile
+Route::get('/profile/visidanmisi',[VisidanMisiController::class,'userview'])->name('visidanmisi');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 

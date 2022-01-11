@@ -45,7 +45,7 @@
                         <div class="dropdown">
                             <a class="dropbtn">Profile</a>
                             <div class="dropdown-content">
-                                <a href="">Visi dan Misi</a>
+                                <a href="{{ route('visidanmisi') }}">Visi dan Misi</a>
                                 <a href="">Guru dan Karyawan</a>
                             </div>
                         </div>
