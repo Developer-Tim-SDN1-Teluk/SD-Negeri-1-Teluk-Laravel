@@ -48,7 +48,9 @@
                             @endif
                         </td>
 
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+                        <td><a href="" class="btn btn-primary btn-sm" >Detail</a></td>
+                        
+
                     </tr>
                     @endforeach
                 </tbody>
