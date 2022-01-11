@@ -13,4 +13,9 @@ class HeaderController extends Controller
         $data = Header::where('active',1)->get();
         return view('admin.dashboard.header.index',compact('data'));
     }
+
+    public function add()
+    {
+        return view('admin.dashboard.header.add');
+    }
 }

@@ -9,6 +9,7 @@ use  App\Http\Controllers\Admin\ContentManagement\Dashboard\TotalGuruController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\HeaderController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
+use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriVideoController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\PrestasiController;
 use  App\Http\Controllers\Admin\ContentManagement\Dashboard\SambutanController;
@@ -35,6 +36,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
     // Conten management Dashboard Header
     Route::get('/admin/dashboard/header',[HeaderController::class,'index'])->name('header');
+     // Add Content Management Header
+     Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
+     Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
 
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
@@ -48,6 +52,10 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
      // Content Management Dashboard Visi dan Misi
      Route::get('/admin/profile/visidanmisi',[VisidanMisiController::class,'index'])->name('visidanmisi');
+     // Add Visidanmisi
+     Route::get('/admin/profile/visidanmisi/add',[VisidanMisiController::class,'add'])->name('addvisidanmisi');
+     Route::post('/admin/profile/visidanmisi/add',[VisidanMisiController::class,'store'])->name('storevisidanmisi');
+     
     // Content Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
     // Fasilitas Ruang Guru
@@ -61,6 +69,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/galeri/galerifoto',[GaleriFotoController::class,'index'])->name('galerifoto');
     //Galeri Video
     Route::get('/admin/galeri/galerivideo',[GaleriVideoController::class,'index'])->name('galerivideo');
+    // Add Fasilitas Ruang Lab
+    Route::get('/admin/galeri/galerivideo/add',[GaleriVideoController::class,'add'])->name('addgalerivideo');
+    Route::post('/admin/galeri/galerivideo/add',[GaleriVideoController::class,'post'])->name('postgalerivideo');
      // Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
      // Add Fasilitas Mushola
@@ -68,7 +79,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::post('/admin/fasilitas/mushola/add',[MusholaController::class,'store'])->name('storemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
-      // Kontak
+     Route::get('/admin/fasilitas/perpustakaan/add',[PerpustakaanController::class,'add'])->name('addperpustakaan');
+     Route::post('/admin/fasilitas/perpustakaan/add',[PerpustakaanController::class,'store'])->name('storeperpustakaan');
+     // Kontak
       Route::get('/admin/kontak',[KontakController::class,'index'])->name('kontak');
       // Add Kontak
       Route::get('/admin/kontak/add',[KontakController::class,'add'])->name('addkontak');
