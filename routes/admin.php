@@ -85,8 +85,12 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::post('/admin/fasilitas/mushola/add',[MusholaController::class,'store'])->name('storemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
+     // Add fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan/add',[PerpustakaanController::class,'add'])->name('addperpustakaan');
      Route::post('/admin/fasilitas/perpustakaan/add',[PerpustakaanController::class,'store'])->name('storeperpustakaan');
+     //Edit Fasilitas
+     Route::get('/admin/fasilitas/perpustakaan/edit/{id}',[PerpustakaanController::class,'edit'])->name('editperpustakaan');
+     Route::post('/admin/fasilitas/perpustakaan/update/{id}',[PerpustakaanController::class,'update'])->name('updateperpustakaan');
      // Kontak
       Route::get('/admin/kontak',[KontakController::class,'index'])->name('kontak');
       // Add Kontak

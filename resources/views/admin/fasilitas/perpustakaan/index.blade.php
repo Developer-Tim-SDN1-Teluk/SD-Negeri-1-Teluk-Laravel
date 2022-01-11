@@ -6,7 +6,7 @@
             <h3>Fasilitas Perpustakaan</h3>
         </div>
         <div class="card-body">
-            <a href="" class="btn btn-primary">Tambah</a>
+            <a href="{{route('adm.addperpustakaan')}}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">
@@ -38,6 +38,7 @@
                         @else
                         <td>Tidak ada Gambar</td>
                         @endif
+                       
                         <td>
                             @if($row->active == 1)
                             <span class="badge badge-success">Active</span>
@@ -45,7 +46,12 @@
                             <span class="badge badge-danger">Nonactive</span>
                             @endif
                         </td>
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+
+                        <td>
+                            <a href="" class="btn btn-primary btn-sm" >Detail</a>
+                            <a href="{{ route('adm.editperpustakaan',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="" class=" btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
