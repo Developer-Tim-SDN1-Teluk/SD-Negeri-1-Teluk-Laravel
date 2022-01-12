@@ -85,7 +85,16 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Galeri
     //galeri foto
     Route::get('/admin/galeri/galerifoto',[GaleriFotoController::class,'index'])->name('galerifoto');
-    //Galeri Video
+    // Add galeri foto
+    Route::get('/admin/galeri/galerifoto/add',[GaleriFotoController::class,'add'])->name('addgalerifoto');
+    Route::post('/admin/galeri/galerifoto/add',[GaleriFotoController::class,'store'])->name('storegalerifoto');
+    //Edit galeri foto
+    Route::get('/admin/galeri/galerifoto/edit/{id}',[GaleriFotoController::class,'edit'])->name('editgalerifoto');
+    Route::post('/admin/galeri/galerifoto/update/{id}',[GaleriFotoController::class,'update'])->name('updategalerifoto');
+     // Delete galeri foto
+     Route::get('/admin/galeri/galerifoto/delete/{id}',[GaleriFotoController::class,'destroy'])->name('deletegalerifoto');
+    
+     //Galeri Video
     Route::get('/admin/galeri/galerivideo',[GaleriVideoController::class,'index'])->name('galerivideo');
     // Add Fasilitas Ruang Lab
     Route::get('/admin/galeri/galerivideo/add',[GaleriVideoController::class,'add'])->name('addgalerivideo');
