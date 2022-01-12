@@ -106,4 +106,11 @@ class RuangGuruController extends Controller
                         ->with('success','Berhasil Tambah Data');
 
     }
+
+    public function destroy($id)
+    {
+        $ruangguru = RuangGuru::findorfail($id);
+        $ruangguru->delete();
+        return back();
+    }
 }

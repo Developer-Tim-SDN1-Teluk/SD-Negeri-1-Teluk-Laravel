@@ -78,6 +78,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Edit Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru/edit/{id}',[RuangGuruController::class,'edit'])->name('editruangguru');
     Route::post('/admin/fasilitas/ruangguru/update/{id}',[RuangGuruController::class,'update'])->name('updateruangguru');
+    // Delete Fasilitas Ruang Guru
+    Route::get('/admin/fasilitas/ruangguru/delete/{id}',[RuangGuruController::class,'destroy'])->name('deleteruangguru');
 
 
     // Galeri
