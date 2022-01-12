@@ -93,8 +93,8 @@ class VisidanMisiController extends Controller
             $file->save();
         }else{
             $visimisi = VisidanMisi::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }

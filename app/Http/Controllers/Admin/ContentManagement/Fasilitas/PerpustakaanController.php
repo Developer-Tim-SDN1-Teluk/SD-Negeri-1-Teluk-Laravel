@@ -94,8 +94,8 @@ class PerpustakaanController extends Controller
             $file->save();
         }else{
             $perpustakaan = Perpustakaan::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }

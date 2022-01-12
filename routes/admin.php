@@ -30,6 +30,11 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     //add dashboard sambutan
     Route::get('/admin/dashboard/sambutan/add',[SambutanController::class,'add'])->name('addsambutan');
     Route::post('/admin/dashboard/sambutan/add',[SambutanController::class,'store'])->name('storesambutan');
+     // edit sambutan
+     Route::get('/admin/dashboard/sambutan/edit/{id}',[SambutanController::class,'edit'])->name('editsambutan');
+     Route::post('/admin/dashboard/sambutan/update/{id}',[SambutanController::class,'update'])->name('updatesambutan');
+     // Delete dashboard sambutan
+    Route::get('/admin/dashboard/sambutan/delete/{id}',[SambutanController::class,'destroy'])->name('deletesambutan');
     // Conten Management Dashboard Prestasi
     Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
     // Conten Management Dashboard Ekstrakulikuler
@@ -42,6 +47,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
      Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
 
+    // Add totalguru
+    Route::get('/admin/dashboard/totalguru/add',[TotalGuruController::class,'add'])->name('addtotalguru');
+    Route::post('/admin/dashboard/totalguru/add',[TotalGuruController::class,'store'])->name('storetotalguru');
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
     // Add Fasilitas Ruang Lab
@@ -104,6 +112,11 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      // Add Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola/add',[MusholaController::class,'add'])->name('addmushola');
      Route::post('/admin/fasilitas/mushola/add',[MusholaController::class,'store'])->name('storemushola');
+      // Edit Fasilitas Mushola
+    Route::get('/admin/fasilitas/mushola/edit/{id}',[MusholaController::class,'edit'])->name('editmushola');
+    Route::post('/admin/fasilitas/mushola/update/{id}',[MusholaController::class,'update'])->name('updatemushola');
+     // Delete dashboard mushola
+     Route::get('/admin/fasilitas/mushola/delete/{id}',[MusholaController::class,'destroy'])->name('deletemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
      // Add fasilitas Perpustakaan
