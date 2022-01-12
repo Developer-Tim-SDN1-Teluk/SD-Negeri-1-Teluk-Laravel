@@ -96,8 +96,8 @@ class RuangGuruController extends Controller
             $file->save();
         }else{
             $ruangguru = RuangGuru::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }

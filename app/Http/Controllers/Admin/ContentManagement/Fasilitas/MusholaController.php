@@ -50,8 +50,8 @@ class MusholaController extends Controller
             $file->save();
         }else{
             $mushola = Mushola::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }

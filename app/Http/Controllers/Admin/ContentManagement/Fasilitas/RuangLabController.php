@@ -51,8 +51,8 @@ class RuangLabController extends Controller
             $file->save();
         }else{
             $ruanglab = RuangLab::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
