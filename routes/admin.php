@@ -37,8 +37,19 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/sambutan/delete/{id}',[SambutanController::class,'destroy'])->name('deletesambutan');
     // Conten Management Dashboard Prestasi
     Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
+
     // Conten Management Dashboard Ekstrakulikuler
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
+     // Add Dashboard Ekstrakulikuler
+     Route::get('/admin/dashboard/ekstra/add',[EkstraController::class,'add'])->name('addekstra');
+     Route::post('/admin/dashboard/ekstra/add',[EkstraController::class,'store'])->name('storeekstra');
+     //Edit Dashboard Ekstrakulikuler
+     Route::get('/admin/dashboard/ekstra/edit/{id}',[EkstraController::class,'edit'])->name('editekstra');
+     Route::post('/admin/dashboard/ekstra/update/{id}',[EkstraController::class,'update'])->name('updateekstra');
+     // Delete Dashboard Ekstrakulikuler
+     Route::get('/admin/dashboard/ekstra/delete/{id}',[EkstraController::class,'destroy'])->name('deleteekstra');
+
+
     // Conten Management Dashboard TotalGUru
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
     // Conten management Dashboard Header
@@ -63,7 +74,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
 
     // Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
-    // Add Fasilitas Kantin         
+    // Add Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin/add',[KantinController::class,'add'])->name('addkantin');
     Route::post('/admin/fasilitas/kantin/add',[KantinController::class,'store'])->name('storekantin');
     // Edit Fasilitas Kantin
@@ -72,8 +83,17 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Delete Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin/delete/{id}',[KantinController::class,'destroy'])->name('deletekantin');
 
-     // Conten Management Dashboard Guru dan Karyawan
-     Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
+    // Conten Management Dashboard Guru dan Karyawan
+    Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
+    // Add Guru dan Karyawan
+    Route::get('/admin/profile/gurudankaryawan/add',[GurudanKaryawanController::class,'add'])->name('addgurudankaryawan');
+    Route::post('/admin/profile/gurudankaryawan/add',[GurudanKaryawanController::class,'store'])->name('storegurudankaryawan');
+    //Edit Guru dan Karyawan
+    Route::get('/admin/profile/gurudankaryawan/edit/{id}',[GurudanKaryawanController::class,'edit'])->name('editgurudankaryawan');
+    Route::post('/admin/profile/gurudankaryawan/update/{id}',[GurudanKaryawanController::class,'update'])->name('updategurudankaryawan');
+    // Delete Guru dan Karyawan
+    Route::get('/admin/profile/gurudankaryawan/delete/{id}',[GurudanKaryawanController::class,'destroy'])->name('deletegurudankaryawan');
+
      // Content Management Dashboard Visi dan Misi
      Route::get('/admin/profile/visidanmisi',[VisidanMisiController::class,'index'])->name('visidanmisi');
      // Add Visidanmisi
@@ -82,9 +102,6 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      //Edit Visidanmisi
      Route::get('/admin/profile/visidanmisi/edit/{id}',[VisidanMisiController::class,'edit'])->name('editvisidanmisi');
     Route::post('/admin/profile/visidanmisi/update/{id}',[VisidanMisiController::class,'update'])->name('updatevisidanmisi');
-     //Delete Visidanmisi
-     Route::get('/admin/profile/visidanmisi/delete/{id}',[VisidanMisiController::class,'destroy'])->name('deletevisidanmisi');
-
 
     // Content Management Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
@@ -97,7 +114,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
 
     // Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru',[RuangGuruController::class,'index'])->name('ruangguru');
-      // Add Fasilitas Ruang Guru          
+      // Add Fasilitas Ruang Guru
     Route::get('/admin/fasilitas/ruangguru/add',[RuangGuruController::class,'add'])->name('addruangguru');
     Route::post('/admin/fasilitas/ruangguru/add',[RuangGuruController::class,'store'])->name('storeruangguru');
     // Edit Fasilitas Ruang Guru
@@ -118,7 +135,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::post('/admin/galeri/galerifoto/update/{id}',[GaleriFotoController::class,'update'])->name('updategalerifoto');
      // Delete galeri foto
      Route::get('/admin/galeri/galerifoto/delete/{id}',[GaleriFotoController::class,'destroy'])->name('deletegalerifoto');
-    
+
      //Galeri Video
     Route::get('/admin/galeri/galerivideo',[GaleriVideoController::class,'index'])->name('galerivideo');
     // Add Fasilitas Ruang Lab
@@ -156,5 +173,5 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Edit User
       Route::get('/admin/user/edit/{id}',[UserController::class,'edit'])->name('edituser');
       Route::post('/admin/user/edit/{id}',[UserController::class,'update'])->name('updateuser');
-      
+
 });
