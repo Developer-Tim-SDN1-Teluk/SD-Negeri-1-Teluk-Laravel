@@ -30,6 +30,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     //add dashboard sambutan
     Route::get('/admin/dashboard/sambutan/add',[SambutanController::class,'add'])->name('addsambutan');
     Route::post('/admin/dashboard/sambutan/add',[SambutanController::class,'store'])->name('storesambutan');
+     // edit sambutan
+     Route::get('/admin/dashboard/sambutan/edit/{id}',[SambutanController::class,'edit'])->name('editsambutan');
+     Route::post('/admin/dashboard/sambutan/update/{id}',[SambutanController::class,'update'])->name('updatesambutan');
     // Conten Management Dashboard Prestasi
     Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
     // Conten Management Dashboard Ekstrakulikuler
