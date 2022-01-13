@@ -52,11 +52,17 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
 
     // Conten Management Dashboard TotalGUru
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
+    
     // Conten management Dashboard Header
     Route::get('/admin/dashboard/header',[HeaderController::class,'index'])->name('header');
-     // Add Content Management Header
-     Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
-     Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
+    // Add Content Dashboard Header
+    Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
+    Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
+    //Edit Content Dashboard Header
+    Route::get('/admin/dashboard/header/edit/{id}',[HeaderController::class,'edit'])->name('editheader');
+    Route::post('/admin/dashboard/header/update/{id}',[HeaderController::class,'update'])->name('updateheader');
+    // Delete Content Dashboard Header
+    Route::get('/admin/dashboard/header/delete/{id}',[HeaderController::class,'destroy'])->name('deleteheader');
 
     // Add totalguru
     Route::get('/admin/dashboard/totalguru/add',[TotalGuruController::class,'add'])->name('addtotalguru');
