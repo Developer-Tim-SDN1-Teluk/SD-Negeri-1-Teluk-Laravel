@@ -55,6 +55,11 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Add Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab/add',[RuangLabController::class,'add'])->name('addruanglab');
     Route::post('/admin/fasilitas/ruanglab/add',[RuangLabController::class,'store'])->name('storeruanglab');
+    // Edit Fasilitas Ruang Lab
+    Route::get('/admin/fasilitas/ruanglab/edit/{id}',[RuangLabController::class,'edit'])->name('editruanglab');
+    Route::post('/admin/fasilitas/ruanglab/update/{id}',[RuangLabController::class,'update'])->name('updateruanglab');
+    // Delete Fasilitas Ruang Lab
+    Route::get('/admin/fasilitas/ruanglab/delete/{id}',[RuangLabController::class,'destroy'])->name('deleteruanglab');
 
     // Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
