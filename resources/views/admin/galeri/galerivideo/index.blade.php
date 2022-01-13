@@ -6,7 +6,7 @@
             <h3>Galeri Video </h3>
         </div>
         <div class="card-body">
-            <a href="{{route('adm.addgalerivideo')}}" class="btn btn-primary">Tambah</a>
+            <a href="{{ route ('adm.addgalerivideo') }}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">
@@ -40,7 +40,9 @@
                         <td>Tidak ada Gambar</td>
                         @endif
                         <td>{{ $row->active }}</td>
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+                        <td><a href="" class="btn btn-primary btn-sm">Detail</a>
+                            <a href="{{ route('adm.editgalerifoto',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="{{ route('adm.deletegalerivideo',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a></td>
                     </tr>
                     @endforeach
                 </tbody>
