@@ -58,6 +58,15 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
 
     // Fasilitas Kantin
     Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
+    // Add Fasilitas Kantin         
+    Route::get('/admin/fasilitas/kantin/add',[KantinController::class,'add'])->name('addkantin');
+    Route::post('/admin/fasilitas/kantin/add',[KantinController::class,'store'])->name('storekantin');
+    // Edit Fasilitas Kantin
+    Route::get('/admin/fasilitas/kantin/edit/{id}',[KantinController::class,'edit'])->name('editkantin');
+    Route::post('/admin/fasilitas/kantin/update/{id}',[KantinController::class,'update'])->name('updatekantin');
+    // Delete Fasilitas Kantin
+    Route::get('/admin/fasilitas/kantin/delete/{id}',[KantinController::class,'destroy'])->name('deletekantin');
+
      // Conten Management Dashboard Guru dan Karyawan
      Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
      // Content Management Dashboard Visi dan Misi
@@ -74,7 +83,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     //Add Content Berita
     Route::get('/admin/berita/contentberita/add',[ContentBeritaController::class,'add'])->name('addcontentberita');
     Route::post('/admin/berita/contentberita/add',[ContentBeritaController::class,'store'])->name('storecontentberita');
-    // Edit Fasilitas Ruang Guru
+    // Edit Fasilitas Ruang Berita
     Route::get('/admin/berita/contentberita/edit/{id}',[ContentBeritaController::class,'edit'])->name('editcontentberita');
     Route::post('/admin/berita/contentberita/update/{id}',[ContentBeritaController::class,'update'])->name('updatecontentberita');
 

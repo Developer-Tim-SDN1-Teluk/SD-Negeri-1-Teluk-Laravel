@@ -39,8 +39,7 @@
     @push('js')
         <script>
             $(document).ready(function() {
-                $('#basic-datatables').DataTable({});
-                
+                $('#basic-datatables').DataTable({});   
             });
         </script>
     @endpush
