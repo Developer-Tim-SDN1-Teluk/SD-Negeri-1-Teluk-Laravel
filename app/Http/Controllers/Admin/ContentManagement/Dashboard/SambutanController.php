@@ -104,5 +104,11 @@ class SambutanController extends Controller
         return redirect()->route('adm.sambutan')
                         ->with('success','Berhasil Tambah Data');
     }
+    public function destroy($id)
+    {
+        $sambutan = Sambutan::findorfail($id);
+        $sambutan->delete();
+        return back();
+    }
 
 }
