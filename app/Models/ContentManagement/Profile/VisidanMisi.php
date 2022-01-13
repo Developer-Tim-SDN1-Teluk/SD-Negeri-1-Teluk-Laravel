@@ -12,6 +12,6 @@ class VisidanMisi extends Model
         'title',
         'content',
         'img'
-        
+
     ];
 }

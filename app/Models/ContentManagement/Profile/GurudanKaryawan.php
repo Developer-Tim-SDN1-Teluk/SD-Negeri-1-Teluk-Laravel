@@ -10,4 +10,11 @@ class GurudanKaryawan extends Model
     use HasFactory;
 
     protected $table = 'gurudankaryawans';
+
+    protected $fillable = [
+        'title',
+        'content',
+        'img'
+
+    ];
 }
