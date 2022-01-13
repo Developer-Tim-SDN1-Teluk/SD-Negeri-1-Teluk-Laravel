@@ -102,7 +102,12 @@ class PerpustakaanController extends Controller
 
         return redirect()->route('adm.perpustakaan')
                         ->with('success','Berhasil Tambah Data');
+    }
 
-
+    public function destroy($id)
+    {
+        $perpustakaan = Perpustakaan::findorfail($id);
+        $perpustakaan->delete();
+        return back();
     }
 }
