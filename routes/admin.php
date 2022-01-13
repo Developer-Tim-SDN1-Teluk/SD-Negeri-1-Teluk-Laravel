@@ -39,18 +39,15 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
     // Conten Management Dashboard TotalGUru
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
-<<<<<<< Updated upstream
     // Conten management Dashboard Header
     Route::get('/admin/dashboard/header',[HeaderController::class,'index'])->name('header');
      // Add Content Management Header
      Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
      Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
 
-=======
     // Add totalguru
     Route::get('/admin/dashboard/totalguru/add',[TotalGuruController::class,'add'])->name('addtotalguru');
     Route::post('/admin/dashboard/totalguru/add',[TotalGuruController::class,'store'])->name('storetotalguru');
->>>>>>> Stashed changes
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
     // Add Fasilitas Ruang Lab
@@ -104,6 +101,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      // Add Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola/add',[MusholaController::class,'add'])->name('addmushola');
      Route::post('/admin/fasilitas/mushola/add',[MusholaController::class,'store'])->name('storemushola');
+      // Edit Fasilitas Mushola
+    Route::get('/admin/fasilitas/mushola/edit/{id}',[MusholaController::class,'edit'])->name('editmushola');
+    Route::post('/admin/fasilitas/mushola/update/{id}',[MusholaController::class,'update'])->name('updatemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
      // Add fasilitas Perpustakaan
