@@ -103,4 +103,10 @@ class VisidanMisiController extends Controller
                         ->with('success','Berhasil Tambah Data');
 
     }
+    public function destroy($id)
+    {
+        $visimisi = VisidanMisi::findorfail($id);
+        $visimisi->delete();
+        return back();
+    }
 }

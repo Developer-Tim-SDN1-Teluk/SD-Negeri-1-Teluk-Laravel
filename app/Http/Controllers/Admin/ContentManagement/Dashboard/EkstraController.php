@@ -26,6 +26,41 @@ class EkstraController extends Controller
         return view('admin.dashboard.ekstra.add');
     }
 
+    public function update(Request $request, $id)
+    {
+
+        $request->validate([
+            'title' =>  'required',
+            'content' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+        ]);
+
+        if($request->hasFile('image')) {
+            foreach($request->file('image') as $file)
+            {
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
+                $file->move(public_path().'/img/photo/', $name);
+                $data[] = $name;
+            }
+            $file = Ekstra::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
+            $file->img = json_encode($data);
+            $file->save();
+        }else{
+            $ekstra = Ekstra::where('id',$request->id)->first();
+            $ekstra->title=$request->title;
+            $ekstra->content=$request->content;
+            $ekstra->active = 1;
+            $ekstra->img = $request->gambar;
+            $ekstra->update();
+        }
+
+        return redirect()->route('adm.ekstra')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
     public function store(Request $request)
     {
         // Validasi
@@ -59,5 +94,11 @@ class EkstraController extends Controller
         return redirect()->route('adm.ekstra')
         ->with('success','Berhasil Tambah Data');
 
+    }
+    public function destroy($id)
+    {
+        $ekstra = Ekstra::findorfail($id);
+        $ekstra->delete();
+        return back();
     }
 }

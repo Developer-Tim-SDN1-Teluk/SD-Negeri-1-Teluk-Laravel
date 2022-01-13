@@ -50,6 +50,7 @@
 
                         <td><a href="" class="btn btn-primary btn-sm">Detail</a>
                             <a href="{{ route('adm.editvisidanmisi',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="{{ route('adm.deletevisidanmisi',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     @endforeach
