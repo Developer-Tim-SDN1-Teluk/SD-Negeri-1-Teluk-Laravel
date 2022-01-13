@@ -106,6 +106,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Edit Fasilitas Mushola
     Route::get('/admin/fasilitas/mushola/edit/{id}',[MusholaController::class,'edit'])->name('editmushola');
     Route::post('/admin/fasilitas/mushola/update/{id}',[MusholaController::class,'update'])->name('updatemushola');
+     // Delete dashboard mushola
+     Route::get('/admin/fasilitas/mushola/delete/{id}',[MusholaController::class,'destroy'])->name('deletemushola');
      // Fasilitas Perpustakaan
      Route::get('/admin/fasilitas/perpustakaan',[PerpustakaanController::class,'index'])->name('perpustakaan');
      // Add fasilitas Perpustakaan

@@ -105,6 +105,12 @@ class MusholaController extends Controller
         return redirect()->route('adm.mushola')
                         ->with('success','Berhasil Tambah Data');
     }
+    public function destroy($id)
+    {
+        $mushola = Mushola::findorfail($id);
+        $mushola->delete();
+        return back();
+    }
 
     
 }
