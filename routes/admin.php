@@ -173,6 +173,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Edit Kontak
       Route::get('/admin/kontak/edit/{id}',[KontakController::class,'edit'])->name('editkontak');
       Route::post('/admin/kontak/update',[KontakController::class,'update'])->name('updatekontak');
+      // Delete Kontak
+      Route::get('/admin/kontak/delete/{id}',[KontakController::class,'destroy'])->name('deletekontak');
       // User
       Route::get('/admin/user',[UserController::class,'index'])->name('user');
       // Add User

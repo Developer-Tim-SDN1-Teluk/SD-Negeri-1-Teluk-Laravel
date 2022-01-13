@@ -49,7 +49,7 @@ class KantinController extends Controller
             $file->active = 1;
             $file->save();
         }else{
-            $ruanglab = Kantin::create([
+            $kantin = Kantin::create([
                 'title' => $request->title,
                 'content' => $request->content,
                 'active' => 1
@@ -59,5 +59,53 @@ class KantinController extends Controller
         return redirect()->route('adm.kantin')
                         ->with('success','Berhasil Tambah Data');
 
+    }
+
+    public function edit($id)
+    {
+        $kantin = Kantin::findorfail($id);
+        return view('admin.fasilitas.kantin.edit',compact('kantin'));                 
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' =>  'required',
+            'content' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+        ]);
+
+        if($request->hasFile('image')) {
+            foreach($request->file('image') as $file)
+            {
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
+                $file->move(public_path().'/img/photo/', $name);
+                $data[] = $name;
+            }
+            $file = Kantin::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
+            $file->img = json_encode($data);
+            $file->save();
+        }else{
+            $kantin = Kantin::where('id',$request->id)->first();
+            $kantin->title=$request->title;
+            $kantin->content=$request->content;
+            $kantin->active = 1;
+            $kantin->img = $request->gambar;
+            $kantin->update();
+        }
+        
+        return redirect()->route('adm.kantin')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
+
+    public function destroy($id)
+    {
+        $kantin = Kantin::findorfail($id);
+        $kantin->delete();
+        return back();
     }
 }
