@@ -77,7 +77,10 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      //Edit Visidanmisi
      Route::get('/admin/profile/visidanmisi/edit/{id}',[VisidanMisiController::class,'edit'])->name('editvisidanmisi');
     Route::post('/admin/profile/visidanmisi/update/{id}',[VisidanMisiController::class,'update'])->name('updatevisidanmisi');
-     
+     //Delete Visidanmisi
+     Route::get('/admin/profile/visidanmisi/delete/{id}',[VisidanMisiController::class,'destroy'])->name('deletevisidanmisi');
+
+
     // Content Management Berita
     Route::get('/admin/berita/contentberita',[ContentBeritaController::class,'index'])->name('contentberita');
     //Add Content Berita
