@@ -35,10 +35,6 @@ class RuangGuruController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $ruangguru = RuangGuru::findorfail($id);
-        // $ruangguru->update($request->all());
-        // // // $ruangguru = RuangGuru::find($id);
-        // // $input = $request->all();
         $request->validate([
             'title' =>  'required',
             'content' => 'required',
