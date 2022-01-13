@@ -3,10 +3,10 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3>Dashboard Total Guru,Karyawan,Siswa</h3>
+            <h3>Dashboard Total Guru</h3>
         </div>
         <div class="card-body">
-            <a href="" class="btn btn-primary">Tambah</a>
+            <a href="{{ route('adm.addtotalguru') }}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">
@@ -22,16 +22,36 @@
                 </thead>
                 <tbody>
                     @php $i = 1; @endphp
-                    @foreach($data as $row)
+                    @forelse($data as $row)
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $row->title }}</td>
                         <td>{{ $row->content }}</td>
-                        <td><img src="{{ $row->img }}" width="150"></td>
-                        <td>{{ $row->active }}</td>
+
+                        @if (!empty($row->img))
+                        <td>
+                            @foreach (json_decode($row->img) as $image)
+                            <a href="{{ url('img/photo/' . $image) }}"><img
+                                    src="{{ url('img/photo/' . $image) }}" width="150px"
+                                    alt="{{ $image }}"></a>
+                            @endforeach
+                        </td>
+                        @else
+                        <td>Tidak ada Gambar</td>
+                        @endif
+
+                        <td>
+                            @if($row->active == 1)
+                            <span class="badge badge-success">Active</span>
+                            @else
+                            <span class="badge badge-danger">Nonactive</span>
+                            @endif
+                        </td>
+
                         <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
                     </tr>
-                    @endforeach
+                    @empty
+                    @endforelse
                 </tbody>
             </table>
         </div>
@@ -40,7 +60,7 @@
         <script>
             $(document).ready(function() {
                 $('#basic-datatables').DataTable({});
-                
+
             });
         </script>
     @endpush
