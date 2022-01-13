@@ -35,8 +35,22 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
      Route::post('/admin/dashboard/sambutan/update/{id}',[SambutanController::class,'update'])->name('updatesambutan');
      // Delete dashboard sambutan
     Route::get('/admin/dashboard/sambutan/delete/{id}',[SambutanController::class,'destroy'])->name('deletesambutan');
+    
     // Conten Management Dashboard Prestasi
     Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
+    // Conten Management Dashboard Prestasi
+    Route::get('/admin/dashboard/prestasi',[PrestasiController::class,'index'])->name('prestasi');
+    // Add Dashboard Prestasi
+    Route::get('/admin/dashboard/prestasi/add',[PrestasiController::class,'add'])->name('addprestasi');
+    Route::post('/admin/dashboard/prestasi/add',[PrestasiController::class,'store'])->name('storeprestasi');
+    //Edit Dashboard Prestasi
+    Route::get('/admin/dashboard/prestasi/edit/{id}',[PrestasiController::class,'edit'])->name('editprestasi');
+    Route::post('/admin/dashboard/prestasi/update/{id}',[PrestasiController::class,'update'])->name('updateprestasi');
+    // Delete Dashboard Prestasi
+    Route::get('/admin/dashboard/prestasi/delete/{id}',[PrestasiController::class,'destroy'])->name('deleteprestasi');
+
+
+
 
     // Conten Management Dashboard Ekstrakulikuler
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
