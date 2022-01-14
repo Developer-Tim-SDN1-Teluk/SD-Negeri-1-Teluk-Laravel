@@ -104,4 +104,12 @@ class ContentBeritaController extends Controller
                         ->with('success','Berhasil Tambah Data');
 
     }
+
+    public function destroy($id)
+    {
+        $contentberita = ContentBerita::findorfail($id);
+        $contentberita->delete();
+        return back();
+    }
+
 }
