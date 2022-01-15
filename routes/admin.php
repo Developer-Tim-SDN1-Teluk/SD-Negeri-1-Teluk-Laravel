@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanControlle
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
 use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
 use App\Http\Controllers\Admin\ContentManagement\User\UserController;
+use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
 
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
@@ -206,5 +207,8 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Edit User
       Route::get('/admin/user/edit/{id}',[UserController::class,'edit'])->name('edituser');
       Route::post('/admin/user/edit/{id}',[UserController::class,'update'])->name('updateuser');
+
+      // Pendaftaran
+      Route::get('/admin/pendaftaran',[PendaftaranController::class,'index'])->name('pendaftaran');
 
 });
