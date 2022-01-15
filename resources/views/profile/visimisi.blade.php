@@ -26,20 +26,17 @@
     <main id="main">
 
         <!-- Indikator Visi -->
-        <section class="visi-misi section-cr">
-            <div class="container">
-                <h1 class="visi-misi-title oren mb-5">{{ $data->title }}</h1>
-                <ol class="visi-misi-list">{{ $data->content }}
-                </ol>
-            </div>
-        </section>
+        @forelse ($visi as $data)
         <section class="visi-misi section-bg">
             <div class="container">
                 <h1 class="visi-misi-title oren mb-5">{{ $data->title }}</h1>
-                <ol class="visi-misi-list">{{ $data->content }}
+                <ol class="visi-misi-list">{!! str_replace("\n","<br/>", $data->content) !!}
                 </ol>
             </div>
         </section>
+        @empty
+            
+        @endforelse
     </main>
     <!-- End #main -->
 

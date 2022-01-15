@@ -10,8 +10,8 @@ class VisidanMisiController extends Controller
 {
     public function userview()
     {
-        $data = VisidanMisi::where('active',1)->first();
-        return view('profile.visimisi',compact('data'));
+        $visi = VisidanMisi::where('active',1)->get();
+        return view('profile.visimisi',compact('visi'));
     }
 
     public function index()
