@@ -29,9 +29,7 @@ class PerpustakaanController extends Controller
     public function edit($id)
     {
         $perpustakaan = Perpustakaan::findorfail($id);
-        return view('admin.fasilitas.perpustakaan.edit',compact('perpustakaan'));
-       
-                        
+        return view('admin.fasilitas.perpustakaan.edit',compact('perpustakaan'));                        
     }
 
     public function update(Request $request, $id)

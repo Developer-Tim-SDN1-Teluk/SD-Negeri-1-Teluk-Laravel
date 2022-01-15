@@ -54,7 +54,7 @@
                         <div class="dropdown">
                             <a class="dropbtn {{\Request::route()->getName() == 'ruangguru' || \Request::route()->getName() == 'ruanglab' ? 'active submenu' : null }}">Fasilitas</a>
                             <div class="dropdown-content">
-                                <a href="">Perpustakaan</a>
+                                <a href="{{ route('perpustakaan') }}">Perpustakaan</a>
                                 <a href="{{ route('ruangguru') }}">Ruang Guru</a>
                                 <a href="">Mushola</a>
                                 <a href="">Kantin</a>
