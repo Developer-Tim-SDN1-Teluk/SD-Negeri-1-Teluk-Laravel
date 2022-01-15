@@ -342,6 +342,19 @@
 							</span>
 							<h4 class="text-section">Content Management</h4>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.pendaftaran' ? 'active submenu' : null }}">
+							<a href="{{ route('adm.pendaftaran') }}">
+								<i class="fas fa-pen-square"></i>
+								<p>Pendaftaran Siswa</p>
+							</a>
+						</li>
+
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Content Management</h4>
+						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.sambutan' || \Request::route()->getName() == 'adm.totalguru' ||
 							\Request::route()->getName() == 'adm.prestasi' || \Request::route()->getName() == 'adm.ekstra' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentdashboard">
