@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Sambutan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'content',
+        'img'
+        
+    ];
 }

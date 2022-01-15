@@ -16,7 +16,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="defaultSelect">Content</label>
-                            <textarea class="form-control" name="content" value="<?= old('pesan') ?>" name="pesan" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea class="form-control" name="content" value="<?= old('pesan') ?>" id="exampleFormControlTextarea1" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
                             <label style="mb-3" for="exampleFormControlFile1">Input Gambar</label>
