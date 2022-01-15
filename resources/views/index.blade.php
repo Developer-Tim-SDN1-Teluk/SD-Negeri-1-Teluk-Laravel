@@ -71,21 +71,17 @@
                 <div class="card card-jumlah-karyawan">
                     <div class="card-body">
                         <div class="row p-5">
+                            @forelse ($data['total'] as $item)
                             <div class="col">
-                                <img src="{{asset('')}}assets/img/guru-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Guru</span><br>
-                                <span class="title-jumlah-karyawn-angka">15</span>
+                                @foreach (json_decode($item->img) as $image)
+                                    <img src="{{ url('img/photo/' . $image) }}" width="70" alt="">
+                                @endforeach
+                                <span class="title-jumlah-karyawan">{{ $item->title }}</span><br>
+                                <span class="title-jumlah-karyawn-angka">{{ $item->content }}</span>
                             </div>
-                            <div class="col">
-                                <img src="{{asset('')}}assets/img/karyawan-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Karyawan</span><br>
-                                <span class="title-jumlah-karyawn-angka">2</span>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('')}}assets/img/siswa-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Siswa</span><br>
-                                <span class="title-jumlah-karyawn-angka">100</span>
-                            </div>
+                            @empty
+                                
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -223,35 +219,22 @@
 
                 <div class="container-sm">
                     <div class="row d-flex justify-content-center p-3">
-                        <div class="col-md-4 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/pemanfaatan.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">PEMANFAATAN BANTUAN TIK UNTUK KEGIATAN ASESMEN </h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-4 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/sambutsiswa.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">KEGIATAN PEMBIASAAN MENYAMBUT SISWA </h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
+                        @forelse ($data['berita'] as $item)
+                            <div class="col-md-4 col-md-offset-5 p-3">
+                                <div class="card-berita" style="width: 18rem;">
+                                    @foreach (json_decode($item->img) as $image)
+                                        <img src="{{ url('img/photo/' . $image) }}" class="card-img-top" alt="">
+                                    @endforeach
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{ $item->title }}</h6>
+                                        <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-3 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/daktik.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">MENERIMA DAK TIK rp 220.000.000,-</h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            
+                        @endforelse
 
                     </div>
 
