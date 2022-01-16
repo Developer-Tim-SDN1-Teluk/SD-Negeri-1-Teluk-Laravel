@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         <div class="dropdown">
-                            <a class="dropbtn {{\Request::route()->getName() == 'ruangguru' || \Request::route()->getName() == 'ruanglab' ? 'active submenu' : null }}">Fasilitas</a>
+                            <a class="dropbtn {{\Request::route()->getName() == 'ruangguru' || \Request::route()->getName() == 'ruanglab' || \Request::route()->getName() == 'perpustakaan' || \Request::route()->getName() == 'mushola' || \Request::route()->getName() == 'kantin' ? 'active submenu' : null }}">Fasilitas</a>
                             <div class="dropdown-content">
                                 <a href="{{ route('perpustakaan') }}">Perpustakaan</a>
                                 <a href="{{ route('ruangguru') }}">Ruang Guru</a>
@@ -65,7 +65,7 @@
                     <li><a href="">Berita</a></li>
                     <li>
                         <div class="dropdown">
-                            <a class="dropbtn">Galeri</a>
+                            <a class="dropbtn {{\Request::route()->getName() == 'galerifoto' || \Request::route()->getName() == 'galerivideo' ? 'active submenu' : null }}">Galeri</a>
                             <div class="dropdown-content">
                                 <a href="{{ route('galerifoto') }}">Galeri Foto</a>
                                 <a href="{{ route('galerivideo') }}">Galeri Video</a>

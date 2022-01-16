@@ -20,6 +20,7 @@
                         <th>Kelas</th>
                         <th>File KK</th>
                         <th>File Akta</th>
+                        <th>File Foto</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -36,6 +37,13 @@
                         <td><a href="{{ url('img/photo/' . $row->file_kk) }}" target="_blank">KK</a>
                         </td>
                         <td><a href="{{ url('img/photo/' . $row->file_akta_kelahiran) }}" target="_blank">Akta Lahir</a>
+                        </td>
+                        <td>
+                            @if(!empty($row->file_pas_foto))
+                            <a href="{{ url('img/photo/' . $row->file_pas_foto) }}" target="_blank">Pas Foto</a>
+                            @else 
+                            Kosong
+                            @endif
                         </td>
                         <td>
                             <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
