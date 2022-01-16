@@ -10,9 +10,8 @@ class GaleriVideo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
         'content',
-        'img'
+        'active'
         
     ];
 }

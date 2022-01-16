@@ -13,9 +13,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Title</th>
                         <th>Content</th>
-                        <th>Image</th>
                         <th>Active</th>
                         <th>Action</th>
                     </tr>
@@ -25,20 +23,7 @@
                     @foreach($data as $row)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->title }}</td>
                         <td>{{ $row->content }}</td>
-                        @if (!empty($row->img))
-                        <td>
-                            @foreach (json_decode($row->img) as $image)
-                            <a href="{{ url('img/photo/' . $image) }}">
-                                <img
-                                    src="{{ url('img/photo/' . $image) }}" width="150px"
-                                    alt="{{ $image }}"></a>
-                            @endforeach
-                        </td>
-                        @else
-                        <td>Tidak ada Gambar</td>
-                        @endif
                         <td>
                             @if($row->active == 1)
                             <span class="badge badge-success">Active</span>

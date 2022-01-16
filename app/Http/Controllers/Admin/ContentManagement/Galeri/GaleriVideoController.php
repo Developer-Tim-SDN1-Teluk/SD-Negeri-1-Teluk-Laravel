@@ -14,6 +14,12 @@ class GaleriVideoController extends Controller
         return view('admin.galeri.galerivideo.index',compact('data'));
     }
 
+    public function userview()
+    {
+        $galerivideo = GaleriVideo::where('active',1)->get();
+        return view('galeri.galerivideo',compact('galerivideo'));
+    }
+
     public function add()
     {
         return view('admin.galeri.galerivideo.add');
@@ -23,32 +29,13 @@ class GaleriVideoController extends Controller
     {
         // Validasi
         $request->validate([
-            'title' =>  'required',
             'content' => 'required',
-            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
         ]);
 
-        if($request->hasFile('image')) {
-            foreach($request->file('image') as $file)
-            {
-                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
-                $file->move(public_path().'/img/photo/', $name);
-                $data[] = $name;
-            }
-
-            $file = new GaleriVideo();
-            $file->title=$request->title;
-            $file->content=$request->content;
-            $file->img = json_encode($data);
-            $file->active = 1;
-            $file->save();
-        }else{
-            $data = GaleriVideo::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
-                'active' => 1
-            ]);
-        }
+        GaleriVideo::create([
+            'content' => $request->content,
+            'active' => 1
+        ]);
 
         return redirect()->route('adm.galerivideo')
                         ->with('success','Berhasil Tambah Data');
@@ -59,40 +46,19 @@ class GaleriVideoController extends Controller
     {
         $data = GaleriVideo::findorfail($id);
         return view('admin.galeri.galerivideo.edit',compact('data'));
-       
-                        
     }
     
     public function update(Request $request, $id)
     {
     
         $request->validate([
-            'title' =>  'required',
             'content' => 'required',
-            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
         ]);
 
-        if($request->hasFile('image')) {
-            foreach($request->file('image') as $file)
-            {
-                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
-                $file->move(public_path().'/img/photo/', $name);
-                $data[] = $name;
-            }
-            $file = GaleriVideo::where('id',$request->id)->first();
-            $file->title=$request->title;
-            $file->content=$request->content;
-            $file->active = 1;
-            $file->img = json_encode($data);
-            $file->save();
-        }else{
-            $galerivideo = GaleriVideo::where('id',$request->id)->first();
-            $galerivideo->title=$request->title;
-            $galerivideo->content=$request->content;
-            $galerivideo->active = 1;
-            $galerivideo->img = $request->gambar;
-            $galerivideo->update();
-        }
+        
+        $galerivideo = GaleriVideo::where('id',$request->id)->first();
+        $galerivideo->content=$request->content;
+        $galerivideo->update();
         
         return redirect()->route('adm.galerivideo')
                         ->with('success','Berhasil Tambah Data');
