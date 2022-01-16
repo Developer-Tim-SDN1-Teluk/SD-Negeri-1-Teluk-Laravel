@@ -26,6 +26,49 @@ class TotalGuruController extends Controller
         return view('admin.dashboard.totalguru.add');
     }
 
+    public function edit($id)
+    {
+        $totalguru = TotalGuru::findorfail($id);
+        return view('admin.dashboard.totalguru.edit',compact('totalguru'));
+       
+                        
+    }
+
+    public function update(Request $request, $id)
+    {
+    
+        $request->validate([
+            'title' =>  'required',
+            'content' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+        ]);
+
+        if($request->hasFile('image')) {
+            foreach($request->file('image') as $file)
+            {
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
+                $file->move(public_path().'/img/photo/', $name);
+                $data[] = $name;
+            }
+            $file = TotalGuru::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
+            $file->img = json_encode($data);
+            $file->save();
+        }else{
+            $totalguru = TotalGuru::where('id',$request->id)->first();
+            $totalguru->title=$request->title;
+            $totalguru->content=$request->content;
+            $totalguru->active = 1;
+            $totalguru->img = $request->gambar; 
+            $totalguru->update();
+        }
+        
+        return redirect()->route('adm.totalguru')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
     public function store(Request $request)
     {
         // Validasi
@@ -60,5 +103,11 @@ class TotalGuruController extends Controller
         return redirect()->route('adm.totalguru')
                         ->with('success','Berhasil Tambah Data');
 
+    }
+    public function destroy($id)
+    {
+        $totalguru = TotalGuru::findorfail($id);
+        $totalguru->delete();
+        return back();
     }
 }

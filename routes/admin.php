@@ -39,18 +39,15 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/dashboard/ekstra',[EkstraController::class,'index'])->name('ekstra');
     // Conten Management Dashboard TotalGUru
     Route::get('/admin/dashboard/totalguru',[TotalGuruController::class,'index'])->name('totalguru');
-<<<<<<< Updated upstream
     // Conten management Dashboard Header
     Route::get('/admin/dashboard/header',[HeaderController::class,'index'])->name('header');
      // Add Content Management Header
      Route::get('/admin/dashboard/header/add',[HeaderController::class,'add'])->name('addheader');
      Route::post('/admin/dashboard/header/add',[HeaderController::class,'store'])->name('storeheader');
 
-=======
     // Add totalguru
     Route::get('/admin/dashboard/totalguru/add',[TotalGuruController::class,'add'])->name('addtotalguru');
     Route::post('/admin/dashboard/totalguru/add',[TotalGuruController::class,'store'])->name('storetotalguru');
->>>>>>> Stashed changes
     // Fasilitas Ruang Lab
     Route::get('/admin/fasilitas/ruanglab',[RuangLabController::class,'index'])->name('ruanglab');
     // Add Fasilitas Ruang Lab
@@ -61,6 +58,12 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     Route::get('/admin/fasilitas/kantin',[KantinController::class,'index'])->name('kantin');
      // Conten Management Dashboard Guru dan Karyawan
      Route::get('/admin/profile/gurudankaryawan',[GurudanKaryawanController::class,'index'])->name('gurudankaryawan');
+     // Edit Guru dan Karyawan
+     Route::get('/admin/dashboard/toalguru/edit/{id}',[TotalGuruController::class,'edit'])->name('edittotalguru');
+     Route::post('/admin/dashboard/totalguru/update/{id}',[TotalGuruController::class,'update'])->name('updatetotalguru');
+    //  delete total guru
+    Route::get('/admin/dashboard/totalguru/delete/{id}',[TotalGuruController::class,'destroy'])->name('deletetotalguru');
+
      // Content Management Dashboard Visi dan Misi
      Route::get('/admin/profile/visidanmisi',[VisidanMisiController::class,'index'])->name('visidanmisi');
      // Add Visidanmisi
@@ -75,7 +78,7 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     //Add Content Berita
     Route::get('/admin/berita/contentberita/add',[ContentBeritaController::class,'add'])->name('addcontentberita');
     Route::post('/admin/berita/contentberita/add',[ContentBeritaController::class,'store'])->name('storecontentberita');
-    // Edit Fasilitas Ruang Guru
+    // Edit Content Berita
     Route::get('/admin/berita/contentberita/edit/{id}',[ContentBeritaController::class,'edit'])->name('editcontentberita');
     Route::post('/admin/berita/contentberita/update/{id}',[ContentBeritaController::class,'update'])->name('updatecontentberita');
 

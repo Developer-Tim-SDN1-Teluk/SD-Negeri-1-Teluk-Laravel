@@ -48,7 +48,11 @@
                             @endif
                         </td>
 
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+                    <td>    
+                        <a href="" class="btn btn-primary btn-sm">Detail</a>
+                        <a href="{{ route('adm.edittotalguru',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                        <a href="{{ route('adm.deletetotalguru',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
+                    </td>
                     </tr>
                     @empty
                     @endforelse

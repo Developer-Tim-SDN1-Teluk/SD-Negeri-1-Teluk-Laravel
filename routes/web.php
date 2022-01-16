@@ -35,6 +35,9 @@ Route::get('/kontak', function () {
 Route::get('/galerifoto', function () {
     return view('galerifoto');
 });
+//Dashboard
+Route::get('/dashboard/totalguru',[TotalGuruController::class,'userview'])->name('totalguru');
+
 
 // Fasilitas
 Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
