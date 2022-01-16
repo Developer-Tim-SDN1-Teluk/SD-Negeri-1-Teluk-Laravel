@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\KantinController;
 use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
 
 /*
@@ -53,6 +54,7 @@ Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('
 Route::get('/fasilitas/ruangguru',[RuangGuruController::class,'userview'])->name('ruangguru');
 Route::get('/fasilitas/perpustakaan',[PerpustakaanController::class,'userview'])->name('perpustakaan');
 Route::get('/fasilitas/mushola',[MusholaController::class,'userview'])->name('mushola');
+Route::get('/fasilitas/kantin',[KantinController::class,'userview'])->name('kantin');
 
 // Profile
 Route::get('/profile/visidanmisi',[VisidanMisiController::class,'userview'])->name('visidanmisi');

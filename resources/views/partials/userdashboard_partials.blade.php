@@ -33,7 +33,7 @@
 
             <div class="logo">
                 <h1 class="text-light">
-                    <a href="index.html">
+                    <a href="{{ route('dashboard') }}">
                         <img src="{{ asset('') }}assets/img/logo.png"></a>
                 </h1>
             </div>
@@ -57,7 +57,7 @@
                             <div class="dropdown-content">
                                 <a href="{{ route('perpustakaan') }}">Perpustakaan</a>
                                 <a href="{{ route('ruangguru') }}">Ruang Guru</a>
-                                <a href="">Mushola</a>
+                                <a href="{{ route('mushola') }}">Mushola</a>
                                 <a href="">Kantin</a>
                                 <a href="{{ route('ruanglab') }}">Ruang Lab</a>
                             </div>
