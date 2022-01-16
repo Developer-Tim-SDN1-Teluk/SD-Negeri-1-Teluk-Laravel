@@ -132,7 +132,7 @@ class ContentSeeder extends Seeder
         );
 
         // visi misi
-        DB::table('visidan_misis')->insert(
+        DB::table('visidan_misis')->insert([
             [
                 'title' => 'Indikator Visi',
                 'content' => '1. Unggul dalam prestasi akademik dan non akademik\s
@@ -157,6 +157,7 @@ class ContentSeeder extends Seeder
                 'img' => '["trophy.png"]',
                 'active' => 1
             ],
+        ]
         );
 
         // Guru dan Karyawan
