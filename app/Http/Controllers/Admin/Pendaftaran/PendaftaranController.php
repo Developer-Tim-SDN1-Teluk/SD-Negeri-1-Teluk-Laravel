@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Pendaftaran;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use App\Models\FileSiswa;
 
 class PendaftaranController extends Controller
 {
@@ -23,43 +24,39 @@ class PendaftaranController extends Controller
     {
          // Validasi
          $request->validate([
-            'name' =>  'required',
+            'nama' =>  'required',
             'nik' => 'required',
             'alamat' => 'required',
             'nama_ibu' => 'required',
             'nama_ayah' => 'required',
             'file_kk' => 'required',
-            'file_akte_kelahiran'=> 'required',
-            'file_pas_foto' => 'required',
-            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+            'file_akta_kelahiran'=> 'required',
+            'file_kk.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG',
+            'file_akta_kelahiran.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG',
         ]);
 
-        if($request->hasFile('image')) {
-            foreach($request->file('image') as $file)
-            {
-                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
-                $file->move(public_path().'/img/photo/', $name);
-                $data[] = $name;
-            }
+        if($request->hasFile('file_kk') && $request->hasFile('file_akta_kelahiran')) {
+            $file_kk = $request->file('file_kk');
+            $file_akta_kelahiran = $request->file('file_akta_kelahiran');
+            $kk = uniqid() . '_' . time(). '.' .$file_kk->getClientOriginalName();
+            $akta = uniqid() . '_' . time(). '.' .$file_akta_kelahiran->getClientOriginalName();
+            $file_kk->move(public_path().'/img/photo/', $kk);  
+            $file_akta_kelahiran->move(public_path().'/img/photo/', $akta); 
 
-            $file = new Siswa();
-            $file->name=$request->name;
-            $file->nik=$request->nik;
-            $file->alamat=$request->alamat;
-            $file->nama_ibu=$request->nama_ibu;
-            $file->nama_ayah=$request->nama_ayah;
-            $file->file_kk=$request->file_kk;
-            $file->file_akte_kelahiran=$request->file_akte_kelahiran;
-            $file->file_pas_foto=$request->file_pas_foto;
-            $file->img = json_encode($data);
-            $file->active = 1;
+            $siswa = new Siswa();
+            $file = new FileSiswa();
+            
+            $siswa->nama=$request->nama;
+            $siswa->nik=$request->nik;
+            $siswa->alamat=$request->alamat;
+            $siswa->nama_ibu=$request->nama_ibu;
+            $siswa->nama_ayah=$request->nama_ayah;
+            $file->nik = $request->nik;
+            $file->file_kk = $kk;
+            $file->file_akta_kelahiran = $akta;
+            $siswa->active = 0;
+            $siswa->save();
             $file->save();
-        }else{
-            $siswa = Siswa::create([
-                'title' => $request->title,
-                'content' => $request->content,
-                'active' => 1
-            ]);
         }
     }
 

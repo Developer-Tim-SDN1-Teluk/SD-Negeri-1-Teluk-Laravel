@@ -10,17 +10,18 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('')}}assets/img/kemendikbud.png" rel="icon">
+    <link href="{{ asset('') }}assets/img/kemendikbud.png" rel="icon">
 
 
     <!-- Google Fonts -->
-    <link href="{{asset('')}}https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="{{ asset('') }}https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap CSS Files -->
-    <link href="{{asset('')}}assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('') }}assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS-->
-    <link href="{{asset('')}}assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('') }}assets/css/style.css" rel="stylesheet">
     {{-- Bootstrap  Icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     {{-- Style CSS login --}}
@@ -36,7 +37,7 @@
             <div class="logo">
                 <h1 class="text-light">
                     <a href="index.html">
-                        <img src="{{asset('')}}assets/img/logo.png"></a>
+                        <img src="{{ asset('') }}assets/img/logo.png"></a>
                 </h1>
             </div>
 
@@ -77,7 +78,7 @@
                     </li>
                     <li><a href="kontak.html">Kontak</a></li>
                     <li class="nav-item"><a href="/login" class="nav-link">
-                        <i class="bi bi-box-arrow-right"></i> Login </a>
+                            <i class="bi bi-box-arrow-right"></i> Login </a>
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -95,100 +96,51 @@
     <!-- End Header -->
 
     {{-- Form Login --}}
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <main class="form-register">
-                <h1 class="h3 mb-3 fw-normal text-center">Form Registrasi</h1>
-                <form action="{{ route('pendaftaran') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-floating">
-                        <input type="text" name="name" class="form-control rounded-top" id="name" placeholder="Name">
-                        <label for="name">Nama</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="text" name="nik" class="form-control" id="username" placeholder="NIK">
-                        <label for="username">NIK</label>
-                    </div>
-                  <div class="form-floating">
-                        <input type="text" name="alamat" class="form-control" id="email" placeholder="Alamat">
-                        <label for="email">Alamat</label>
-                  </div>
-
-                    <div class="form-floating">
-                        <input type="text" name="nama_ibu" class="form-control" id="email" placeholder="Nama Ibu">
-                        <label for="email">Nama Ibu</label>
-                    </div>
-
-                    <div class="form-floating">
-                        <input type="text" name="nama_ayah" class="form-control" id="email" placeholder="Nama Ayah">
-                        <label for="email">Nama Ayah</label>
-                    </div>
-                    <div class="mt-2">
-                        <label style="mb-3 " for="exampleFormControlFile1">Kartu Keluarga</label>
-                        <input type="file" name="file_kk" multiple="multiple" class="form-control-file mt-2" id="exampleFormControlFile1">
-                    </div>
-
-                    <div class="mt-2">
-                        <label style="mb-3" for="exampleFormControlFile1">Akte Kelahiran</label>
-                        <input type="file" name="file_akte_kelahiran" multiple="multiple" class="form-control-file mt-2" id="exampleFormControlFile1">
-                    </div>
-
-                    <div class="mt-2">
-                        <label style="mb-3" for="exampleFormControlFile1">Pas Foto</label>
-                        <input type="file" name="file_pas_foto" multiple="multiple" class="form-control-file mt-2" id="exampleFormControlFile1">
-                    </div>
-                  <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Register</button>
-                </form>
-        </div>
-    </div>
-    
-   
-
-        <!-- Kontak -->
-        <section class="Kontak mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1><b>Kontak</b></h1>
-                        <ul class="pb-3">
-                            <li class="pb-3">
-                                <img src="{{asset('')}}assets/img/location.png">
-                                <span>HOS Notosuwiryo, Purwokerto Selatan, Kruwet, Teluk, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53145</span>
-                            </li>
-
-                            <li class="pb-3 kontak-list">
-                                <img src="{{asset('')}}assets/img/email.png"> Support@Figma.com
-                            </li>
-
-                            <li class="pb-3">
-                                <img src="{{asset('')}}assets/img/phone.png"> +62281624540
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <div class="mapouter">
-                            <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=SDN%20Teluk%2001%20JL%20HOS%20Notosuwiryo,%20Purwokerto%20Selatan,%20Kruwet,%20Teluk,%20Kec.%20Purwokerto%20Sel.,%20Kabupaten%20Banyumas,%20Jawa%20Tengah%2053145&t=&z=19&ie=UTF8&iwloc=&output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                                <style>
-                                    .gmap_canvas {
-                                        overflow: hidden;
-                                        background: none!important;
-                                        height: 500px;
-                                        width: 600px;
-                                    }
-                                </style>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main class="form-register">
+    </main>
+    <div class="container">
+        <h1 class="h3 mb-3 fw-normal text-center">Form Registrasi</h1>
+        <form action="{{ route('pendaftaran') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-floating">
+                <input type="text" name="nama" class="form-control rounded-top mt-3" id="name" placeholder="Name">
+                <label for="name">Nama</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" name="nik" class="form-control mt-3" id="username" placeholder="NIK">
+                <label for="username">NIK</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" name="alamat" class="form-control mt-3" id="email" placeholder="Alamat">
+                <label for="email">Alamat</label>
             </div>
 
-        </section>
-        <!-- End Section -->
+            <div class="form-floating">
+                <input type="text" name="nama_ibu" class="form-control mt-3" id="email" placeholder="Nama Ibu">
+                <label for="email">Nama Ibu</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" name="nama_ayah" class="form-control mt-3" id="email" placeholder="Nama Ayah">
+                <label for="email">Nama Ayah</label>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label mt-3">File Kartu Keluarga</label>
+                <input class="form-control" name="file_kk" type="file" id="formFile">
+            </div>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label mt-3">File Akta Kelahiran</label>
+                <input class="form-control" name="file_akta_kelahiran" type="file" id="formFile">
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Register</button>
+        </form>
+    </div>
 
     </main>
     <!-- End #main -->
-
+    <div class="mt-3"></div>
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
@@ -201,10 +153,10 @@
     <!-- End Footer -->
 
     <!-- Bootstrap JS -->
-    <script src="{{asset('')}}assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('') }}assets/js/bootstrap.bundle.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{asset('')}}assets/js/main.js"></script>
+    <script src="{{ asset('') }}assets/js/main.js"></script>
 
 </body>
 

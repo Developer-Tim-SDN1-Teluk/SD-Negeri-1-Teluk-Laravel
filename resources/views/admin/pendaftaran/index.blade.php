@@ -14,7 +14,6 @@
                     <tr>
                         <th>No</th>
                         <th>Name</th>
-                        <th>NISN</th>
                         <th>Alamat</th>
                         <th>Nama Ibu</th>
                         <th>Nama Ayah</th>
@@ -28,7 +27,6 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $row->nama }}</td>
-                        <td>{{ $row->nisn }}</td>
                         <td>{{ $row->alamat }}</td>
                         <td>{{ $row->nama_ibu }}</td>
                         <td>{{ $row->nama_ayah }}</td>
