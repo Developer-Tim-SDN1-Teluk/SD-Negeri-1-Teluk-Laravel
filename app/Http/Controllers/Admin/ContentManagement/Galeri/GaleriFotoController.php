@@ -48,7 +48,7 @@ class GaleriFotoController extends Controller
             }else{
                 $data = GaleriFoto::create([
                     'title' => $request->pesan,
-                    'content' => $request->priority,
+                    'content' => $request->content,
                     'active' => 1
                 ]);
             }

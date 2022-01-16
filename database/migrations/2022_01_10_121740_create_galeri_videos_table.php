@@ -15,9 +15,7 @@ class CreateGaleriVideosTable extends Migration
     {
         Schema::create('galeri_videos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->text('content');
-            $table->string('img');
             $table->smallInteger('active');
             $table->timestamps();
         });
