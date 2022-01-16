@@ -67,12 +67,12 @@ class GaleriFotoController extends Controller
 
     public function update(Request $request, $id)
     {
+    
         $request->validate([
             'title' =>  'required',
             'content' => 'required',
             'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
         ]);
-    
 
         if($request->hasFile('image')) {
             foreach($request->file('image') as $file)
@@ -81,25 +81,25 @@ class GaleriFotoController extends Controller
                 $file->move(public_path().'/img/photo/', $name);
                 $data[] = $name;
             }
-
-            $file = new GaleriFoto();
+            $file = GaleriFoto::where('id',$request->id)->first();
             $file->title=$request->title;
             $file->content=$request->content;
-            $file->img = json_encode($data);
             $file->active = 1;
+            $file->img = json_encode($data);
             $file->save();
         }else{
-            $ruanglab = GaleriFoto::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
-                'active' => 1
-            ]);
+            $galerifoto = GaleriFoto::where('id',$request->id)->first();
+            $galerifoto->title=$request->title;
+            $galerifoto->content=$request->content;
+            $galerifoto->active = 1;
+            $galerifoto->img = $request->gambar;
+            $galerifoto->update();
         }
-
+        
         return redirect()->route('adm.galerifoto')
                         ->with('success','Berhasil Tambah Data');
-
     }
+
     public function destroy($id)
     {
         $data = GaleriFoto::findorfail($id);
