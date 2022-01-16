@@ -166,7 +166,7 @@ class ContentSeeder extends Seeder
                 'title' => 'Guru Kelas 1A & 1B',
                 'content' => 'Sulistiya ningsih,S.Pd
                 Rumiasih,S.Pd.SD',
-                'img' => '["kelas 1.png""]',
+                'img' => '["kelas 1.png"]',
                 'active' => 1
             ],
             [
