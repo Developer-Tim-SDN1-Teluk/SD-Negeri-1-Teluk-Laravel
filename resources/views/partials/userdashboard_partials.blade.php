@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="">Berita</a></li>
+                    <li><a class="{{\Request::route()->getName() == 'berita' ? 'active submenu' : null }}" href="{{ route('berita') }}">Berita</a></li>
                     <li>
                         <div class="dropdown">
                             <a class="dropbtn">Galeri</a>
