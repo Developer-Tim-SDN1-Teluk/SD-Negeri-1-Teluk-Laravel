@@ -10,8 +10,8 @@ class GaleriFotoController extends Controller
 {
     public function userview()
     {
-        $data = GaleriFoto::where('active',1)->first();
-        return view('admin.galeri.add',compact('data'));
+        $galerifoto = GaleriFoto::where('active',1)->get();
+        return view('galeri.galerifoto',compact('galerifoto'));
     }
     public function index()
     {

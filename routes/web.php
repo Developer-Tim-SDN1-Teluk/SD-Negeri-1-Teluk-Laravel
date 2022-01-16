@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\KantinController;
 use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
+use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
+use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +62,10 @@ Route::get('/fasilitas/kantin',[KantinController::class,'userview'])->name('kant
 // Profile
 Route::get('/profile/visidanmisi',[VisidanMisiController::class,'userview'])->name('visidanmisi');
 Route::get('/profile/gurudankaryawan',[GurudanKaryawanController::class,'userview'])->name('gurudankaryawan');
+
+// Galeri
+Route::get('/galeri/galerifoto',[GaleriFotoController::class,'userview'])->name('galerifoto');
+Route::get('/galeri/galerivideo',[GaleriVideoController::class,'userview'])->name('galerivideo');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 

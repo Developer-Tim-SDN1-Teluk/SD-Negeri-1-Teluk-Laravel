@@ -39,7 +39,13 @@
                         @else
                         <td>Tidak ada Gambar</td>
                         @endif
-                        <td>{{ $row->active }}</td>
+                        <td>
+                            @if($row->active == 1)
+                            <span class="badge badge-success">Active</span>
+                            @else
+                            <span class="badge badge-danger">Nonactive</span>
+                            @endif
+                        </td>
                         <td><a href="" class="btn btn-primary btn-sm">Detail</a>
                             <a href="{{ route('adm.editgalerifoto',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
                             <a href="{{ route('adm.deletegalerifoto',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a></td>

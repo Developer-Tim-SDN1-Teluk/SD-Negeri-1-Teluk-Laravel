@@ -68,7 +68,7 @@
                         <div class="dropdown">
                             <a class="dropbtn">Galeri</a>
                             <div class="dropdown-content">
-                                <a href="">Galeri Foto</a>
+                                <a href="{{ route('galerifoto') }}">Galeri Foto</a>
                                 <a href="">Galeri Video</a>
                             </div>
                         </div>

@@ -174,6 +174,11 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
     // Add Fasilitas Ruang Lab
     Route::get('/admin/galeri/galerivideo/add',[GaleriVideoController::class,'add'])->name('addgalerivideo');
     Route::post('/admin/galeri/galerivideo/add',[GaleriVideoController::class,'post'])->name('postgalerivideo');
+    //Edit galeri foto
+    Route::get('/admin/galeri/galerivideo/edit/{id}',[GaleriVideoController::class,'edit'])->name('editgalerivideo');
+    Route::post('/admin/galeri/galerivideo/update/{id}',[GaleriVideoController::class,'update'])->name('updategalerivideo');
+    // Delete galeri video
+    Route::get('/admin/galeri/galerivideo/delete/{id}',[GaleriVideoController::class,'destroy'])->name('deletegalerivideo');
      // Fasilitas Mushola
      Route::get('/admin/fasilitas/mushola',[MusholaController::class,'index'])->name('mushola');
      // Add Fasilitas Mushola
