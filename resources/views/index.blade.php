@@ -9,6 +9,7 @@
             <div class="carousel-item active">
                 <div class="carousel-container">
                     <div class="container">
+                        @if(!empty($data['sambutan']))
                         <div class="row">
                             <div class="col-lg-6 d-flex flex-column justify-content-center">
                                 <h2 class="title-hero">{{ $data['header']->title }}</h2>
@@ -28,6 +29,7 @@
                                 @endforeach
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -42,7 +44,7 @@
         <!-- Sambutan Kepala Sekolah -->
         <section class="sambutan-kepsek section-bg">
             <div class="container">
-
+                @if(!empty($data['sambutan']))
                 <div class="row">
                     <div class="col-sm-5 video-box">
                         @foreach (json_decode($data['sambutan']->img) as $image)
@@ -60,7 +62,7 @@
 
                     </div>
                 </div>
-
+                @endif
             </div>
         </section>
         <!-- End Section -->
