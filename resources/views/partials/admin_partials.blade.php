@@ -340,12 +340,33 @@
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-							<h4 class="text-section">Content Management</h4>
+							<h4 class="text-section">Pendaftaran</h4>
 						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.pendaftaran' ? 'active submenu' : null }}">
 							<a href="{{ route('adm.pendaftaran') }}">
 								<i class="fas fa-pen-square"></i>
 								<p>Pendaftaran Siswa</p>
+							</a>
+						</li>
+
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Master Data</h4>
+						</li>
+
+						<li class="nav-item {{\Request::route()->getName() == 'adm.siswa' ? 'active submenu' : null }}">
+							<a href="{{ route('adm.siswa') }}">
+								<i class="fas fa-pen-square"></i>
+								<p>Siswa</p>
+							</a>
+						</li>
+
+						<li class="nav-item {{\Request::route()->getName() == 'adm.user' ? 'active submenu' : null }}">
+							<a href="{{ route('adm.user') }}">
+								<i class="fas fa-pen-square"></i>
+								<p>User</p>
 							</a>
 						</li>
 
@@ -503,22 +524,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.user' ? 'active submenu' : null }}">
-							<a data-toggle="collapse" href="#user">
-								<i class="fas fa-table"></i>
-								<p>User</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="user">
-								<ul class="nav nav-collapse">
-									<li class="{{\Request::route()->getName() == 'adm.user' ? 'active' : null }}">
-										<a href="{{ route('adm.user') }}">
-											<span class="sub-item">User management</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+						
 					</ul>
 				</div>
 			</div>

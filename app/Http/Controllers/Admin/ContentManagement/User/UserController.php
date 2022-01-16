@@ -67,4 +67,11 @@ class UserController extends Controller
                         ->with('success','Berhasil Tambah Data');
     }
 
+    public function destroy($id)
+    {
+        $user = User::findorfail($id);
+        $user->delete();
+        return back();
+    }
+
 }

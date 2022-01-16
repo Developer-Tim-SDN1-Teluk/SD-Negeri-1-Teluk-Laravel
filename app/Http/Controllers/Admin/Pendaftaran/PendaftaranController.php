@@ -11,7 +11,9 @@ class PendaftaranController extends Controller
 {
     public function index()
     {
-        $data = Siswa::where('active',0)->get();
+        $data = Siswa::where('active',0)
+        ->select('siswas.id as id','siswas.nama','siswas.alamat','siswas.nama_ibu','siswas.nama_ayah','siswas.created_at as created_at','file_siswas.file_kk','file_siswas.file_akta_kelahiran')
+        ->join('file_siswas','file_siswas.nik','=','siswas.nik')->get();
         return view('admin.pendaftaran.index',compact('data'));
     }
 
@@ -61,6 +63,22 @@ class PendaftaranController extends Controller
 
         return redirect()->route('pendaftaran')
                         ->with('success','Pendaftaran Berhasil, Silahkan menghubungi nomor 09231232173 untuk info lebih lanjut');
+    }
+
+    public function terima($id)
+    {
+        $siswa = Siswa::find($id);
+        $siswa->active = 1;
+        $siswa->update();
+        return redirect()->route('adm.pendaftaran')
+                        ->with('success','Pendaftaran Berhasil');
+    }
+
+    public function tolak($id)
+    {
+        $siswa = Siswa::findorfail($id);
+        $siswa->delete();
+        return back();
     }
 
 }

@@ -31,7 +31,7 @@
                         <td>{{ $row->created_at }}</td>
                         <td>
                             <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
-                            <a href="" class=" btn btn-danger btn-sm">Delete</a>
+                            <a href="{{ route('adm.deleteuser',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     @endforeach

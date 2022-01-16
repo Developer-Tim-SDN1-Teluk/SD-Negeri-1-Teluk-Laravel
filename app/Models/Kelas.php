@@ -4,16 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\FileSiswa;
 
-class Siswa extends Model
+class Kelas extends Model
 {
+    use HasFactory;
+
     protected $fillable =[
-        'name',
-        'nik',
-        'alamat',
-        'nama_ibu',
-        'nama_ayah',
+        'nama',
         'active'
     ];
 }

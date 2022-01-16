@@ -21,6 +21,8 @@ use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanControll
 use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
 use App\Http\Controllers\Admin\ContentManagement\User\UserController;
 use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
+use App\Http\Controllers\Admin\Siswa\SiswaController;
+use App\Http\Controllers\Admin\Kelas\KelasController;
 
 
 Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
@@ -219,8 +221,23 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       // Edit User
       Route::get('/admin/user/edit/{id}',[UserController::class,'edit'])->name('edituser');
       Route::post('/admin/user/edit/{id}',[UserController::class,'update'])->name('updateuser');
+      // Delete User
+      Route::get('/admin/user/delete/{id}',[UserController::class,'destroy'])->name('deleteuser');
 
       // Pendaftaran
       Route::get('/admin/pendaftaran',[PendaftaranController::class,'index'])->name('pendaftaran');
+      Route::get('/admin/pendaftaran/terima/{id}',[PendaftaranController::class,'terima'])->name('terimapendaftaran');
+      Route::get('/admin/pendaftaran/tolak/{id}',[PendaftaranController::class,'tolak'])->name('tolakpendaftaran');
 
+      // Siswa
+      Route::get('/admin/siswa',[SiswaController::class,'index'])->name('siswa');
+
+      // Kelas
+      Route::get('/admin/kelas',[KelasController::class,'index'])->name('kelas');
+      // Add kelas
+      Route::get('/admin/kelas/add',[KelasController::class,'add'])->name('addkelas');
+      Route::post('/admin/kelas/add',[KelasController::class,'store'])->name('storekelas');
+      // Edit kelas
+      Route::get('/admin/kelas/edit/{id}',[KelasController::class,'edit'])->name('editkelas');
+      Route::post('/admin/kelas/edit/{id}',[KelasController::class,'update'])->name('updatekelas');
 });
