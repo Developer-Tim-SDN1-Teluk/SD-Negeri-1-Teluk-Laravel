@@ -58,6 +58,9 @@ class PendaftaranController extends Controller
             $siswa->save();
             $file->save();
         }
+
+        return redirect()->route('pendaftaran')
+                        ->with('success','Pendaftaran Berhasil, Silahkan menghubungi nomor 09231232173 untuk info lebih lanjut');
     }
 
 }

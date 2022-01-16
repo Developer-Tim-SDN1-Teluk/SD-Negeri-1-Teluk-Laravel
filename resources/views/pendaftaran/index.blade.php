@@ -99,6 +99,17 @@
     <main class="form-register">
     </main>
     <div class="container">
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
+        @if (session('error'))
+        <div class="alert alert-error">
+            {{ session('error') }}
+        </div>
+        @endif
         <h1 class="h3 mb-3 fw-normal text-center">Form Registrasi</h1>
         <form action="{{ route('pendaftaran') }}" method="post" enctype="multipart/form-data">
             @csrf
