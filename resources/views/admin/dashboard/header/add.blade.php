@@ -8,7 +8,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <form action="{{ route('adm.storeruanglab') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('adm.storeheader') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Title</label>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-success" type="submit">Kirim</button>
-                            <a href="{{ route('adm.ruanglab') }}" class="btn btn-primary">Kembali</a>
+                            <a href="{{ route('adm.header') }}" class="btn btn-primary">Kembali</a>
                         </div>
                     </form>
                 </div>

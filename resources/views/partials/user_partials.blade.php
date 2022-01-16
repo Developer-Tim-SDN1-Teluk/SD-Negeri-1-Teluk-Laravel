@@ -43,7 +43,7 @@
                     <li><a href="{{ route('dashboard') }}">Beranda</a></li>
                     <li>
                         <div class="dropdown">
-                            <a class="dropbtn">Profile</a>
+                            <a class="dropbtn {{\Request::route()->getName() == 'visidanmisi' || \Request::route()->getName() == 'gurudankaryawan' ? 'active submenu' : null }}">Profile</a>
                             <div class="dropdown-content">
                                 <a href="{{ route('visidanmisi') }}">Visi dan Misi</a>
                                 <a href="">Guru dan Karyawan</a>
@@ -52,9 +52,9 @@
                     </li>
                     <li>
                         <div class="dropdown">
-                            <a class="active dropbtn">Fasilitas</a>
+                            <a class="dropbtn {{\Request::route()->getName() == 'ruangguru' || \Request::route()->getName() == 'ruanglab' ? 'active submenu' : null }}">Fasilitas</a>
                             <div class="dropdown-content">
-                                <a href="">Perpustakaan</a>
+                                <a href="{{ route('perpustakaan') }}">Perpustakaan</a>
                                 <a href="{{ route('ruangguru') }}">Ruang Guru</a>
                                 <a href="">Mushola</a>
                                 <a href="">Kantin</a>

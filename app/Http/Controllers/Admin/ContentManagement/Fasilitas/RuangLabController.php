@@ -51,8 +51,8 @@ class RuangLabController extends Controller
             $file->save();
         }else{
             $ruanglab = RuangLab::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
@@ -60,5 +60,53 @@ class RuangLabController extends Controller
         return redirect()->route('adm.ruanglab')
                         ->with('success','Berhasil Tambah Data');
 
+    }
+
+    public function edit($id)
+    {
+        $ruanglab = RuangLab::findorfail($id);
+        return view('admin.fasilitas.ruanglab.edit',compact('ruanglab'));                 
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' =>  'required',
+            'content' => 'required',
+            'image.*' => 'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG'
+        ]);
+
+        if($request->hasFile('image')) {
+            foreach($request->file('image') as $file)
+            {
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
+                $file->move(public_path().'/img/photo/', $name);
+                $data[] = $name;
+            }
+            $file = RuangLab::where('id',$request->id)->first();
+            $file->title=$request->title;
+            $file->content=$request->content;
+            $file->active = 1;
+            $file->img = json_encode($data);
+            $file->save();
+        }else{
+            $ruanglab = RuangLab::where('id',$request->id)->first();
+            $ruanglab->title=$request->title;
+            $ruanglab->content=$request->content;
+            $ruanglab->active = 1;
+            $ruanglab->img = $request->gambar;
+            $ruanglab->update();
+        }
+        
+        return redirect()->route('adm.ruanglab')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
+
+    public function destroy($id)
+    {
+        $ruanglab = RuangLab::findorfail($id);
+        $ruanglab->delete();
+        return back();
     }
 }

@@ -11,8 +11,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 d-flex flex-column justify-content-center">
-                                <h2 class="title-hero">Unggul Dan Religi</h2>
-                                <h4 class="desc-hero">-Visi SD Negeri 1 Teluk</h4>
+                                <h2 class="title-hero">{{ $data['header']->title }}</h2>
+                                <h4 class="desc-hero">{{ $data['header']->content }}</h4>
                                 <div>
                                     <div class="text-left text-lg-start ">
                                         <a href="comingsoon.html" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center rounded-pill">
@@ -23,7 +23,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-5 hero-img">
-                                <img src="{{asset('')}}assets/img/hero-img.png" class="img-fluid" alt="">
+                                @foreach (json_decode($data['header']->img) as $image)
+                                    <img src="{{ url('img/photo/' . $image) }}" class="img-fluid" alt="">
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -43,15 +45,17 @@
 
                 <div class="row">
                     <div class="col-sm-5 video-box">
-                        <img src="{{asset('')}}assets/img/kepsek.png" class="img-fluid" alt="">
+                        @foreach (json_decode($data['sambutan']->img) as $image)
+                            <img src="{{ url('img/photo/' . $image) }}" class="img-fluid" alt="">
+                        @endforeach
                     </div>
 
                     <div class="col mt-3">
 
                         <div class="icon-box">
                             <h4>Sambutan</h4>
-                            <h2 class="oren">Kepala Sekolah</h2>
-                            <p>Sebagai lembaga pendidikan. SD Negeri 1 Teluk tanggap dengan perkembangan teknologi tersebut. Dengan dukungan SDM yang di milikisekolah ini siap untuk berkompetisidengan sekolah lain dalam pelayanan informasi publik. Teknologi informasi Web khususnya, menjadi sarana bagi SD Negeri 1 Teluk untuk memberi pelayanan informasi secara cepat dan jelas. Dari layanan ini pula, Sekolah siap menerima saran dari semua pihak yang akhirnya dapat menjawab kebutuhan masyarakat. Terima kasih telah berkunjung ke website kami </p>
+                            <h2 class="oren">{{ $data['sambutan']->title }}</h2>
+                            <p>{{ $data['sambutan']->content }}</p>
                         </div>
 
                     </div>
@@ -67,21 +71,17 @@
                 <div class="card card-jumlah-karyawan">
                     <div class="card-body">
                         <div class="row p-5">
+                            @forelse ($data['total'] as $item)
                             <div class="col">
-                                <img src="{{asset('')}}assets/img/guru-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Guru</span><br>
-                                <span class="title-jumlah-karyawn-angka">15</span>
+                                @foreach (json_decode($item->img) as $image)
+                                    <img src="{{ url('img/photo/' . $image) }}" width="70" alt="">
+                                @endforeach
+                                <span class="title-jumlah-karyawan">{{ $item->title }}</span><br>
+                                <span class="title-jumlah-karyawn-angka">{{ $item->content }}</span>
                             </div>
-                            <div class="col">
-                                <img src="{{asset('')}}assets/img/karyawan-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Karyawan</span><br>
-                                <span class="title-jumlah-karyawn-angka">2</span>
-                            </div>
-                            <div class="col">
-                                <img src="{{asset('')}}assets/img/siswa-icon.png" width="70" alt="">
-                                <span class="title-jumlah-karyawan">Total Siswa</span><br>
-                                <span class="title-jumlah-karyawn-angka">100</span>
-                            </div>
+                            @empty
+                                
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -190,29 +190,17 @@
             <div class="container">
                 <div class="tengah">
                     <div class="row">
+                        @foreach ($data['prestasi'] as $item)
                         <div class="col">
                             <div class="icon-box icon-box-blue">
-                                <img src="{{asset('')}}assets/img/trophy.png" width="150">
-                                <h5 class="juara-title mt-3"><a href="">Juara 2 Festival Ketrampilan PramukaSiaga Inovatif Tingkat KaB. Banyumas</a></h5>
+                                @foreach (json_decode($item->img) as $image)
+                                    <img src="{{ url('img/photo/' . $image) }}" width="150">
+                                @endforeach
+                                <h5 class="juara-title mt-3"><a href="">{{ $item->title }}</a></h5>
 
                             </div>
                         </div>
-
-                        <div class="col">
-                            <div class="icon-box icon-box-blue">
-                                <img src="{{asset('')}}assets/img/trophy.png" width="150">
-                                <h5 class="juara-title mt-3"><a href="">JUARA 1 LOMBA OSNG TINGKAT KABUPATEN</a></h5>
-
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="icon-box icon-box-blue">
-                                <img src="{{asset('')}}assets/img/trophy.png" width="150">
-                                <h5 class="juara-title mt-3"><a href="">Juara 2 Seni Tari tingkat kecamatan</a></h5>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
 
@@ -231,35 +219,22 @@
 
                 <div class="container-sm">
                     <div class="row d-flex justify-content-center p-3">
-                        <div class="col-md-4 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/pemanfaatan.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">PEMANFAATAN BANTUAN TIK UNTUK KEGIATAN ASESMEN </h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-4 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/sambutsiswa.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">KEGIATAN PEMBIASAAN MENYAMBUT SISWA </h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
+                        @forelse ($data['berita'] as $item)
+                            <div class="col-md-4 col-md-offset-5 p-3">
+                                <div class="card-berita" style="width: 18rem;">
+                                    @foreach (json_decode($item->img) as $image)
+                                        <img src="{{ url('img/photo/' . $image) }}" class="card-img-top" alt="">
+                                    @endforeach
+                                    <div class="card-body">
+                                        <h6 class="card-title">{{ $item->title }}</h6>
+                                        <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-3 col-md-offset-5 p-3">
-                            <div class="card-berita" style="width: 18rem;">
-                                <img src="{{asset('')}}assets/img/daktik.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title">MENERIMA DAK TIK rp 220.000.000,-</h6>
-                                    <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            
+                        @endforelse
 
                     </div>
 

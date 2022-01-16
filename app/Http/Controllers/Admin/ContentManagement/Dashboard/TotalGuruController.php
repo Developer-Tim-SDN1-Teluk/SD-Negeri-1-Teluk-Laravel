@@ -94,8 +94,8 @@ class TotalGuruController extends Controller
             $file->save();
         }else{
             $totalguru = TotalGuru::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }

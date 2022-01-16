@@ -10,8 +10,8 @@ class VisidanMisiController extends Controller
 {
     public function userview()
     {
-        $data = VisidanMisi::where('active',1)->first();
-        return view('profile.visimisi',compact('data'));
+        $visi = VisidanMisi::where('active',1)->get();
+        return view('profile.visimisi',compact('visi'));
     }
 
     public function index()
@@ -93,8 +93,8 @@ class VisidanMisiController extends Controller
             $file->save();
         }else{
             $visimisi = VisidanMisi::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
@@ -102,5 +102,11 @@ class VisidanMisiController extends Controller
         return redirect()->route('adm.visidanmisi')
                         ->with('success','Berhasil Tambah Data');
 
+    }
+    public function destroy($id)
+    {
+        $visimisi = VisidanMisi::findorfail($id);
+        $visimisi->delete();
+        return back();
     }
 }

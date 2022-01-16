@@ -26,6 +26,34 @@ class KontakController extends Controller
         return view('admin.kontak.add');
     }
 
+    public function edit($id)
+    {
+        $kontak = Kontak::findorfail($id);
+        return view('admin.kontak.edit',compact('kontak'));
+       
+                        
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'title' =>  'required',
+            'alamat' =>  'required',
+            'email' =>  'required',
+            'hp' =>  'required',
+        ]);
+
+            $kontak = Kontak::where('id',$request->id)->first();
+            $kontak->title=$request->title;
+            $kontak->alamat=$request->alamat;
+            $kontak->email=$request->email;
+            $kontak->hp = $request->hp;
+            $kontak->update();
+        
+        return redirect()->route('adm.kontak')
+                        ->with('success','Berhasil Tambah Data');
+    }
+
     public function store(Request $request)
     {
         // Validasi
@@ -48,5 +76,11 @@ class KontakController extends Controller
         return redirect()->route('adm.kontak')
                         ->with('success','Berhasil Tambah Data');
 
+    }
+    public function destroy($id)
+    {
+        $kontak = Kontak::findorfail($id);
+        $kontak->delete();
+        return back();
     }
 }

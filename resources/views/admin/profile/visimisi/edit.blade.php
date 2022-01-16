@@ -3,14 +3,14 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3>Edit Fasilitas Ruang Guru</h3>
+            <h3>Edit Visi dan Misi</h3>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col">
                     <form action="{{ route('adm.updatevisidanmisi',$visimisi->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        
+
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Title</label>
                             <input type="hidden" name="id" value="{{ $visimisi->id }}">

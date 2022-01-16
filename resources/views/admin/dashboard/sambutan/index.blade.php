@@ -50,7 +50,7 @@
 
                         <td>  <a href="" class="btn btn-primary btn-sm" >Detail</a>
                             <a href="{{ route('adm.editsambutan',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
-                            <!-- <a href="" class=" btn btn-danger btn-sm">Delete</a></td> -->
+                            <a href="{{ route('adm.deletesambutan',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
                     </tr>
                     @endforeach
                 </tbody>

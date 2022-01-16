@@ -31,7 +31,11 @@
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->hp }}</td>
                         <td>{{ $row->active }}</td>
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+                        <td>
+                            <a href="" class="btn btn-primary btn-sm">Detail</a>
+                            <a href="{{ route('adm.editkontak',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="{{ route('adm.deletekontak',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

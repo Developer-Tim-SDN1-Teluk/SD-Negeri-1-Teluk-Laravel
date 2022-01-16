@@ -9,6 +9,7 @@ use App\Http\Controllers\ForgotpassController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::get('/dashboard/totalguru',[TotalGuruController::class,'userview'])->name
 // Fasilitas
 Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
 Route::get('/fasilitas/ruangguru',[RuangGuruController::class,'userview'])->name('ruangguru');
+Route::get('/fasilitas/perpustakaan',[PerpustakaanController::class,'userview'])->name('perpustakaan');
 
 // Profile
 Route::get('/profile/visidanmisi',[VisidanMisiController::class,'userview'])->name('visidanmisi');

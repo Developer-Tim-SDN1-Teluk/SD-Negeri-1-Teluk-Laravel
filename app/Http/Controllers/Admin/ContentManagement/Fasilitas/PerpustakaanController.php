@@ -29,9 +29,7 @@ class PerpustakaanController extends Controller
     public function edit($id)
     {
         $perpustakaan = Perpustakaan::findorfail($id);
-        return view('admin.fasilitas.perpustakaan.edit',compact('perpustakaan'));
-       
-                        
+        return view('admin.fasilitas.perpustakaan.edit',compact('perpustakaan'));                        
     }
 
     public function update(Request $request, $id)
@@ -94,15 +92,20 @@ class PerpustakaanController extends Controller
             $file->save();
         }else{
             $perpustakaan = Perpustakaan::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
 
         return redirect()->route('adm.perpustakaan')
                         ->with('success','Berhasil Tambah Data');
+    }
 
-
+    public function destroy($id)
+    {
+        $perpustakaan = Perpustakaan::findorfail($id);
+        $perpustakaan->delete();
+        return back();
     }
 }

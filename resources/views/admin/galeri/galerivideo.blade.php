@@ -6,7 +6,7 @@
             <h3>Galeri Video </h3>
         </div>
         <div class="card-body">
-            <a href="" class="btn btn-primary">Tambah</a>
+            <a href="{{route('adm.addgalerivideo')}}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">
@@ -27,7 +27,18 @@
                         <td>{{ $i++ }}</td>
                         <td>{{ $row->title }}</td>
                         <td>{{ $row->content }}</td>
-                        <td>{{ $row->img }}</td>
+                        @if (!empty($row->img))
+                        <td>
+                            @foreach (json_decode($row->img) as $image)
+                            <a href="{{ url('img/photo/' . $image) }}">
+                                <img
+                                    src="{{ url('img/photo/' . $image) }}" width="150px"
+                                    alt="{{ $image }}"></a>
+                            @endforeach
+                        </td>
+                        @else
+                        <td>Tidak ada Gambar</td>
+                        @endif
                         <td>{{ $row->active }}</td>
                         <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
                     </tr>

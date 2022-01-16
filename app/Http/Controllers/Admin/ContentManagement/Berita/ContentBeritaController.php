@@ -94,8 +94,8 @@ class ContentBeritaController extends Controller
             $file->save();
         }else{
             $contentberita = ContentBerita::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
@@ -104,4 +104,12 @@ class ContentBeritaController extends Controller
                         ->with('success','Berhasil Tambah Data');
 
     }
+
+    public function destroy($id)
+    {
+        $contentberita = ContentBerita::findorfail($id);
+        $contentberita->delete();
+        return back();
+    }
+
 }

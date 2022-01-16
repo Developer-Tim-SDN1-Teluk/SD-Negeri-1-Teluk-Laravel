@@ -360,7 +360,7 @@ section {
 
 .visi-misi-title {
     padding-left: 15px;
-    width: 300px;
+    min-width: 200px;
     border-left: 4px solid #FF9300;
     background-color: #FFE89E;
 }

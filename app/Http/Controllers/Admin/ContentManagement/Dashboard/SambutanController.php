@@ -49,8 +49,8 @@ class SambutanController extends Controller
             $file->save();
         }else{
             $sambutan = Sambutan::create([
-                'title' => $request->pesan,
-                'content' => $request->priority,
+                'title' => $request->title,
+                'content' => $request->content,
                 'active' => 1
             ]);
         }
@@ -103,6 +103,12 @@ class SambutanController extends Controller
         
         return redirect()->route('adm.sambutan')
                         ->with('success','Berhasil Tambah Data');
+    }
+    public function destroy($id)
+    {
+        $sambutan = Sambutan::findorfail($id);
+        $sambutan->delete();
+        return back();
     }
 
 }

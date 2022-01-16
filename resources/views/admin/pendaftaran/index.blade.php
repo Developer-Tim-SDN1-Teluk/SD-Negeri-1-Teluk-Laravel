@@ -3,20 +3,22 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3>Galeri Foto </h3>
+            <h3>Pendaftaran Management</h3>
         </div>
         <div class="card-body">
-            <a href="" class="btn btn-primary">Tambah</a>
+            <a href="{{ route('adm.adduser') }}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Image</th>
-                        <th>Active</th>
+                        <th>Name</th>
+                        <th>NISN</th>
+                        <th>Alamat</th>
+                        <th>Nama Ibu</th>
+                        <th>Nama Ayah</th>
+                        <th>Tgl Daftar</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -25,11 +27,16 @@
                     @foreach($data as $row)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->title }}</td>
-                        <td>{{ $row->content }}</td>
-                        <td>{{ $row->img }}</td>
-                        <td>{{ $row->active }}</td>
-                        <td><a href="" class="btn btn-primary btn-sm">Detail</a></td>
+                        <td>{{ $row->nama }}</td>
+                        <td>{{ $row->nisn }}</td>
+                        <td>{{ $row->alamat }}</td>
+                        <td>{{ $row->nama_ibu }}</td>
+                        <td>{{ $row->nama_ayah }}</td>
+                        <td>{{ $row->created_at }}</td>
+                        <td>
+                            <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
+                            <a href="" class=" btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
