@@ -10,8 +10,8 @@ class GurudanKaryawanController extends Controller
 {
     public function userview()
     {
-        $data = GurudanKaryawan::where('active',1)->first();
-        return view('profile.gurudankaryawan',compact('data'));
+        $guru = GurudanKaryawan::where('active',1)->get();
+        return view('profile.gurudankaryawan',compact('guru'));
     }
 
     public function index()
