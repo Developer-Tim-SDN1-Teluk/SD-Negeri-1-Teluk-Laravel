@@ -9,6 +9,7 @@ use App\Models\ContentManagement\Dashboard\Ekstra;
 use App\Models\ContentManagement\Dashboard\Prestasi;
 use App\Models\ContentManagement\Dashboard\TotalGuru;
 use App\Models\ContentManagement\Berita\ContentBerita;
+use App\Models\ContentManagement\Kontak\Kontak;
 
 class DashboardController extends Controller
 {
@@ -20,6 +21,7 @@ class DashboardController extends Controller
         $data['ekstra'] = Ekstra::where('active',1)->get();
         $data['prestasi'] = Prestasi::where('active',1)->get();
         $data['berita'] = ContentBerita::where('active',1)->limit(3)->get();
+        $data['kontak'] = Kontak::where('active',1)->first();
         return view('index',compact('data'));
     }
 }

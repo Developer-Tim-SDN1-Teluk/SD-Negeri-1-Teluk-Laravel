@@ -230,7 +230,7 @@
                                     @endforeach
                                     <div class="card-body">
                                         <h6 class="card-title">{{ $item->title }}</h6>
-                                        <a href="detailberita.html" class="btn btn-primary btn-oren">Selengkapnya</a>
+                                        <a href="{{ route('contentberita',$item->id) }}" class="btn btn-primary btn-oren">Selengkapnya</a>
                                     </div>
                                 </div>
                             </div>
@@ -248,23 +248,24 @@
         <section class="Kontak mt-5">
             <div class="container">
                 <div class="row">
+                    @if(!empty($data['kontak']))
                     <div class="col">
-                        <h1><b>Kontak</b></h1>
+                        <h1><b>{{ $data['kontak']->title }}</b></h1>
                         <ul class="pb-3">
                             <li class="pb-3">
-                                <img src="{{asset('')}}assets/img/location.png">
-                                <span>HOS Notosuwiryo, Purwokerto Selatan, Kruwet, Teluk, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53145</span>
+                                <span>{{ $data['kontak']->alamat }}</span>
                             </li>
 
                             <li class="pb-3 kontak-list">
-                                <img src="{{asset('')}}assets/img/email.png"> Support@Figma.com
+                                <span>{{ $data['kontak']->email }}</span>
                             </li>
 
                             <li class="pb-3">
-                                <img src="{{asset('')}}assets/img/phone.png"> +62281624540
+                                <span>{{ $data['kontak']->hp }}</span>
                             </li>
                         </ul>
                     </div>
+                    @endif
                     <div class="col">
                         <div class="mapouter">
                             <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=SDN%20Teluk%2001%20JL%20HOS%20Notosuwiryo,%20Purwokerto%20Selatan,%20Kruwet,%20Teluk,%20Kec.%20Purwokerto%20Sel.,%20Kabupaten%20Banyumas,%20Jawa%20Tengah%2053145&t=&z=19&ie=UTF8&iwloc=&output=embed"
