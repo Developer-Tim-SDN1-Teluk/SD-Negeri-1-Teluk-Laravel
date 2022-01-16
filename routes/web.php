@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanController;
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriVideoController;
+use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,10 @@ Route::get('/profile/gurudankaryawan',[GurudanKaryawanController::class,'uservie
 // Galeri
 Route::get('/galeri/galerifoto',[GaleriFotoController::class,'userview'])->name('galerifoto');
 Route::get('/galeri/galerivideo',[GaleriVideoController::class,'userview'])->name('galerivideo');
+
+// Berita
+Route::get('/berita',[ContentBeritaController::class,'userview'])->name('berita');
+Route::get('/berita/{id}',[ContentBeritaController::class,'content'])->name('contentberita');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 

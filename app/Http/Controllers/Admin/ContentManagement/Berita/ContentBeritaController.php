@@ -11,8 +11,15 @@ class ContentBeritaController extends Controller
 
     public function userview()
     {
-        $data = ContentBerita::where('active',1)->first();
-        return view('berita',compact('data'));
+        $berita = ContentBerita::where('active',1)->limit(6)->orderBy('created_at','DESC')->get();
+        return view('berita.index',compact('berita'));
+    }
+
+    public function content($id)
+    {
+        $berita = ContentBerita::find($id);
+        $beritas = ContentBerita::where('active',1)->limit(6)->orderBy('created_at','DESC')->get();
+        return view('berita.detail',compact('berita','beritas'));
     }
     //
     public function index()
