@@ -166,67 +166,67 @@ class ContentSeeder extends Seeder
                 'title' => 'Guru Kelas 1A & 1B',
                 'content' => 'Sulistiya ningsih,S.Pd
                 Rumiasih,S.Pd.SD',
-                'img' => '["pemanfaatan.png"]',
+                'img' => '["kelas 1.png""]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Kelas 2A & 2B',
                 'content' => 'Nur Laeli Hidayah,S.Pd
                 Afifah Hasna Prilia,S.Pd.SD',
-                'img' => '["sambutsiswa.png"]',
+                'img' => '["Kelas 2.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Kelas 3A & 3B',
                 'content' => 'Ratna Dwihastuti,S.Pd
                 Bayu Rizky Aditya,S.Pd',
-                'img' => '["daktik.png"]',
+                'img' => '["Kelas 3.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Kelas 4A & 4B',
                 'content' => 'Sumirah,S.Pd.SD
                 Artini,S.Pd.SD (Kusmaenik,S.Pd)',
-                'img' => '["pemanfaatan.png"]',
+                'img' => '["Kelas 4.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Kelas 5A & 5B',
                 'content' => 'Retno Prabaningrum,S.Pd.SD
                 Dian Suhestina,S.Pd',
-                'img' => '["sambutsiswa.png"]',
+                'img' => '["Kelas 5.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Kelas 6A & 6B',
                 'content' => 'Mohammad Januar,S.Pd.SD
                 Novi Setyaningsih,S.Pd',
-                'img' => '["daktik.png"]',
+                'img' => '["Kelas 6.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Pend. Agama Islam',
                 'content' => 'Kusmiati,S.Ag',
-                'img' => '["daktik.png"]',
+                'img' => '["Guru Agama Islam.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Guru Penjasorkes',
                 'content' => 'Sukanto,S.Pd
                 Antika Sri Jatmika,S.Pd.SD',
-                'img' => '["daktik.png"]',
+                'img' => '["Guru Penjasorkes.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Tenaga Admin',
                 'content' => 'Chotijah',
-                'img' => '["daktik.png"]',
+                'img' => '["Tenaga Admin.png"]',
                 'active' => 1
             ],
             [
                 'title' => 'Penjaga Sekolah',
                 'content' => 'Apriyanto',
-                'img' => '["daktik.png"]',
+                'img' => '["Penjaga Sekolah.png"]',
                 'active' => 1
             ],
         ]
