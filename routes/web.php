@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangLabController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
+use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::get('/dashboard/totalguru',[TotalGuruController::class,'userview'])->name
 Route::get('/fasilitas/ruanglab',[RuangLabController::class,'userview'])->name('ruanglab');
 Route::get('/fasilitas/ruangguru',[RuangGuruController::class,'userview'])->name('ruangguru');
 Route::get('/fasilitas/perpustakaan',[PerpustakaanController::class,'userview'])->name('perpustakaan');
+Route::get('/fasilitas/mushola',[MusholaController::class,'userview'])->name('mushola');
 
 // Profile
 Route::get('/profile/visidanmisi',[VisidanMisiController::class,'userview'])->name('visidanmisi');
