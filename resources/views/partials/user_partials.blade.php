@@ -46,7 +46,7 @@
                             <a class="dropbtn {{\Request::route()->getName() == 'visidanmisi' || \Request::route()->getName() == 'gurudankaryawan' ? 'active submenu' : null }}">Profile</a>
                             <div class="dropdown-content">
                                 <a href="{{ route('visidanmisi') }}">Visi dan Misi</a>
-                                <a href="">Guru dan Karyawan</a>
+                                <a href="{{ route('gurudankaryawan') }}">Guru dan Karyawan</a>
                             </div>
                         </div>
                     </li>
@@ -57,7 +57,7 @@
                                 <a href="{{ route('perpustakaan') }}">Perpustakaan</a>
                                 <a href="{{ route('ruangguru') }}">Ruang Guru</a>
                                 <a href="{{ route('mushola') }}">Mushola</a>
-                                <a href="">Kantin</a>
+                                <a href="{{ route('kantin') }}">Kantin</a>
                                 <a href="{{ route('ruanglab') }}">Ruang Lab</a>
                             </div>
                         </div>
