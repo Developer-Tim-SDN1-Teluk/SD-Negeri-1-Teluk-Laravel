@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-    use HasFactory;
+    protected $fillable =[
+        'name',
+        'nik',
+        'alamat',
+        'nama_ibu',
+        'nama_ayah',
+        'file_kk',
+        'file_akte_kelahiran',
+        'file_pas_foto'
+    ];
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ContentManagement\Fasilitas\RuangGuruController;
 use App\Http\Controllers\Admin\ContentManagement\Profile\VisidanMisiController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\PerpustakaanController;
 use App\Http\Controllers\Admin\ContentManagement\Fasilitas\MusholaController;
+use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,12 @@ Route::get('/galerifoto', function () {
 });
 //Dashboard
 Route::get('/dashboard/totalguru',[TotalGuruController::class,'userview'])->name('totalguru');
+
+
+// Pendaftaraan
+Route::get('/pendaftaran',[PendaftaranController::class,'userview'])->name('pendaftaran');
+Route::post('/pendaftaran',[PendaftaranController::class,'daftar'])->name('pendaftaran');
+
 
 
 // Fasilitas

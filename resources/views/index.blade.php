@@ -15,7 +15,7 @@
                                 <h4 class="desc-hero">{{ $data['header']->content }}</h4>
                                 <div>
                                     <div class="text-left text-lg-start ">
-                                        <a href="comingsoon.html" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center rounded-pill">
+                                        <a href="{{ route('pendaftaran') }}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center rounded-pill">
                                             <span>Pendaftaran Peserta Didik Baru</span>
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
