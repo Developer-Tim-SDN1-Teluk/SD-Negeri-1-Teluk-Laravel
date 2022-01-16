@@ -17,7 +17,6 @@
                     {{ session('error') }}
                 </div>
             @endif
-            <a href="{{ route('adm.adduser') }}" class="btn btn-primary">Tambah</a>
             <br>
             <br>
             <table class="table-hover dataTable" style="width: 100%" cellpadding="4" id="basic-datatables">

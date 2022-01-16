@@ -14,10 +14,12 @@
                     <tr>
                         <th>No</th>
                         <th>Name</th>
-                        <th>Alamat</th>
+                        <th style="width: 30%">Alamat</th>
                         <th>Nama Ibu</th>
                         <th>Nama Ayah</th>
-                        <th>Tgl Daftar</th>
+                        <th>Kelas</th>
+                        <th>File KK</th>
+                        <th>File Akta</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,7 +32,11 @@
                         <td>{{ $row->alamat }}</td>
                         <td>{{ $row->nama_ibu }}</td>
                         <td>{{ $row->nama_ayah }}</td>
-                        <td>{{ $row->created_at }}</td>
+                        <td>{{ $row->kelas }}</td>
+                        <td><a href="{{ url('img/photo/' . $row->file_kk) }}" target="_blank">KK</a>
+                        </td>
+                        <td><a href="{{ url('img/photo/' . $row->file_akta_kelahiran) }}" target="_blank">Akta Lahir</a>
+                        </td>
                         <td>
                             <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
                             <a href="" class=" btn btn-danger btn-sm">Delete</a>

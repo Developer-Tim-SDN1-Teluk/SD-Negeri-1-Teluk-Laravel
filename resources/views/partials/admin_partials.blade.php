@@ -369,6 +369,13 @@
 							</a>
 						</li>
 
+						<li class="nav-item {{\Request::route()->getName() == 'adm.kelas' ? 'active submenu' : null }}">
+							<a href="{{ route('adm.kelas') }}">
+								<i class="fas fa-pen-square"></i>
+								<p>Kelas</p>
+							</a>
+						</li>
+
 						<li class="nav-item {{\Request::route()->getName() == 'adm.user' ? 'active submenu' : null }}">
 							<a href="{{ route('adm.user') }}">
 								<i class="fas fa-pen-square"></i>

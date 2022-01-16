@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Siswa;
 use App\Models\FileSiswa;
 use App\Models\Configuration;
+use App\Models\Kelas;
 
 class PendaftaranController extends Controller
 {
@@ -69,8 +70,10 @@ class PendaftaranController extends Controller
 
     public function terima($id)
     {
+        $kelas = Kelas::where('nama','like','%1%')->first();
         $siswa = Siswa::find($id);
         $siswa->active = 1;
+        $siswa->id_kelas = $kelas->id;
         $siswa->update();
         return redirect()->route('adm.pendaftaran')
                         ->with('success','Pendaftaran Berhasil');
