@@ -30,7 +30,13 @@
                         <td>{{ $row->alamat }}</td>
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->hp }}</td>
-                        <td>{{ $row->active }}</td>
+                        <td>
+                            @if($row->active == 1)
+                            <span class="badge badge-success">Active</span>
+                            @else
+                            <span class="badge badge-danger">Nonactive</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="" class="btn btn-primary btn-sm">Detail</a>
                             <a href="{{ route('adm.editkontak',$row->id) }}" class=" btn btn-info btn-sm">Update</a>

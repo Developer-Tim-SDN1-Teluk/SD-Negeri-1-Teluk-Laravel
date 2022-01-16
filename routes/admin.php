@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanControll
 use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
 use App\Http\Controllers\Admin\ContentManagement\User\UserController;
 use App\Http\Controllers\Admin\Pendaftaran\PendaftaranController;
+use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\Siswa\SiswaController;
 use App\Http\Controllers\Admin\Kelas\KelasController;
 
@@ -228,6 +229,9 @@ Route::group(['middleware' => ["Admin"], 'as' => 'adm.'], function() {
       Route::get('/admin/pendaftaran',[PendaftaranController::class,'index'])->name('pendaftaran');
       Route::get('/admin/pendaftaran/terima/{id}',[PendaftaranController::class,'terima'])->name('terimapendaftaran');
       Route::get('/admin/pendaftaran/tolak/{id}',[PendaftaranController::class,'tolak'])->name('tolakpendaftaran');
+      Route::get('/admin/pendaftaran/pengaturan',[ConfigurationController::class,'index'])->name('pengaturanpendaftaran');
+      Route::get('/admin/pendaftaran/pengaturan/edit/{id}',[ConfigurationController::class,'update'])->name('updatepengaturanpendaftaran');
+      
 
       // Siswa
       Route::get('/admin/siswa',[SiswaController::class,'index'])->name('siswa');

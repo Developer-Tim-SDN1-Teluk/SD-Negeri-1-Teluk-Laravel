@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Siswa;
 use App\Models\FileSiswa;
+use App\Models\Configuration;
 
 class PendaftaranController extends Controller
 {
@@ -19,7 +20,8 @@ class PendaftaranController extends Controller
 
     public function userview()
     {
-        return view('pendaftaran.index');
+        $data = Configuration::where('nama','pendaftaran')->first();
+        return view('pendaftaran.index',compact('data'));
     }
 
     public function daftar(Request $request)

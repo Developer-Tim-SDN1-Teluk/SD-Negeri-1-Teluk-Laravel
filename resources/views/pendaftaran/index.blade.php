@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- Form Login --}}
-    <div style="margin-top: 100px"></div>
+    <div style="margin-top: 130px"></div>
         <main class="form-register">
         </main>
         <div class="container">
@@ -17,6 +17,8 @@
                     {{ session('error') }}
                 </div>
             @endif
+
+            @if($data->active==1)
             <h1 class="h3 mb-3 fw-normal text-center">Form Registrasi</h1>
             <form action="{{ route('pendaftaran') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -54,6 +56,13 @@
 
                 <button class="w-100 btn btn-lg btn-primary mt-4 mb-4" type="submit">Register</button>
             </form>
+            @else 
+            <div class="mt-4">
+                <h1 class="h3 mb-3 mt-5 fw-normal text-center">Pendaftaran Belum dibuka kembali</h1>
+            </div>
+            
+            <div style="margin-bottom:500px"></div>
+            @endif
         </div>
 
         </main>

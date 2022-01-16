@@ -348,6 +348,12 @@
 								<p>Pendaftaran Siswa</p>
 							</a>
 						</li>
+						<li class="nav-item {{\Request::route()->getName() == 'adm.pengaturanpendaftaran' ? 'active submenu' : null }}">
+							<a href="{{ route('adm.pengaturanpendaftaran') }}">
+								<i class="fas fa-pen-square"></i>
+								<p>Pengaturan Pendaftaran</p>
+							</a>
+						</li>
 
 						<li class="nav-section">
 							<span class="sidebar-mini-icon">
