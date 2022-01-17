@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ContentManagement\Profile\GurudanKaryawanControll
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriFotoController;
 use App\Http\Controllers\Admin\ContentManagement\Galeri\GaleriVideoController;
 use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
+use App\Http\Controllers\Admin\ContentManagement\Kontak\KontakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,18 +32,6 @@ use App\Http\Controllers\Admin\ContentManagement\Berita\ContentBeritaController;
 
 Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-Route::get('/berita', function () {
-    return view('berita');
-});
-Route::get('/kontak', function () {
-    return view('kontak');
-});
-Route::get('/galerifoto', function () {
-    return view('galerifoto');
-});
 //Dashboard
 Route::get('/dashboard/totalguru',[TotalGuruController::class,'userview'])->name('totalguru');
 
@@ -71,6 +60,9 @@ Route::get('/galeri/galerivideo',[GaleriVideoController::class,'userview'])->nam
 // Berita
 Route::get('/berita',[ContentBeritaController::class,'userview'])->name('berita');
 Route::get('/berita/{id}',[ContentBeritaController::class,'content'])->name('contentberita');
+
+// Kontak
+Route::get('/kontak',[KontakController::class,'userview'])->name('kontak');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 

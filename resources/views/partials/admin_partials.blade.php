@@ -70,7 +70,7 @@
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						{{-- <li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-envelope"></i>
 							</a>
@@ -250,7 +250,7 @@
 									</div>
 								</div>
 							</div>
-						</li>
+						</li> --}}
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
@@ -264,17 +264,18 @@
 											<div class="avatar-lg"><img src="{{asset('')}}assets/admin/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4>{{ Auth::user()->name }}</h4>
-												<p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<p class="text-muted">{{ Auth::user()->email }}</p>
+                                                {{-- <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a> --}}
 											</div>
 										</div>
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
+										{{-- <a class="dropdown-item" href="#">My Profile</a>
 										<a class="dropdown-item" href="#">My Balance</a>
 										<a class="dropdown-item" href="#">Inbox</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
+										<a class="dropdown-item" href="#">Account Setting</a> --}}
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
 									</li>
@@ -537,7 +538,7 @@
 								</ul>
 							</div>
 						</li>
-						
+
 					</ul>
 				</div>
 			</div>

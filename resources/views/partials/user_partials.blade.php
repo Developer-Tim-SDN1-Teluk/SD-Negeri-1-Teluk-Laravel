@@ -72,7 +72,10 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="">Kontak</a></li>
+                    <li><a href="{{ route('kontak') }}">Kontak</a></li>
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}" class="nav-link">Login</a>
+                    </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

@@ -11,8 +11,8 @@ class KontakController extends Controller
 {
     public function userview()
     {
-        $data = Kontak::where('active',1)->first();
-        return view('kontak.kontak',compact('data'));
+        $kontak = Kontak::where('active',1)->first();
+        return view('kontak.index',compact('kontak'));
     }
 
     public function index()
@@ -30,8 +30,8 @@ class KontakController extends Controller
     {
         $kontak = Kontak::findorfail($id);
         return view('admin.kontak.edit',compact('kontak'));
-       
-                        
+
+
     }
 
     public function update(Request $request)
@@ -49,7 +49,7 @@ class KontakController extends Controller
             $kontak->email=$request->email;
             $kontak->hp = $request->hp;
             $kontak->update();
-        
+
         return redirect()->route('adm.kontak')
                         ->with('success','Berhasil Tambah Data');
     }
@@ -71,7 +71,7 @@ class KontakController extends Controller
             'hp' => $request->hp,
             'active' => 1
         ]);
-        
+
 
         return redirect()->route('adm.kontak')
                         ->with('success','Berhasil Tambah Data');
