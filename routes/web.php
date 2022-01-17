@@ -73,5 +73,6 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index']);
 
 Route::get('/forgotpass',[ForgotpassController::class, 'index']);
+Route::post('/forgotpass',[ForgotpassController::class, 'sendlink'])->name('sendlink');
 
 Route::get('/reset',[ResetController::class, 'index']);

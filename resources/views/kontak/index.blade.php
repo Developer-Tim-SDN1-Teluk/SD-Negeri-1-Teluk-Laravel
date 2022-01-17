@@ -13,7 +13,7 @@
                             <span class="oren">KONTAK</span>
                         </div>
                         <div class="tengah title-hero">
-                            <h2 class="putih tittle-hero-2">"UNGGUL DAN RELIGI"</h2>
+                            <h2 class="putih tittle-hero-2">SD NEGERI 1 TELUK</h2>
                         </div>
                     </div>
                 </div>
