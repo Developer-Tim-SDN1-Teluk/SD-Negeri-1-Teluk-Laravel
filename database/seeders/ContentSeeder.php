@@ -55,6 +55,83 @@ class ContentSeeder extends Seeder
         ];
         DB::table('total_gurus')->insert($totalguru);
 
+        // Ekstra
+        DB::table('ekstras')->insert([
+            [
+                'title' => 'Seni Tari',
+                'content' => '1',
+                'img' => '["senitari.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Pidato',
+                'content' => '2',
+                'img' => '["pidato.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Seni Lukis',
+                'content' => '1',
+                'img' => '["lukis.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Pantonim',
+                'content' => '1',
+                'img' => '["pantonim.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Macapat',
+                'content' => '2',
+                'img' => '["macapat.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Pramuka',
+                'content' => '100',
+                'img' => '["pramuka.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Atletik',
+                'content' => '1',
+                'img' => '["Atletik.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Kenthongan',
+                'content' => '2',
+                'img' => '["Kenthongan.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Hadroh',
+                'content' => '100',
+                'img' => '["hadroh.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Cipta Baca Puisi',
+                'content' => '1',
+                'img' => '["puisi.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'BTQ',
+                'content' => '2',
+                'img' => '["btq.png"]',
+                'active' => 1
+            ],
+            [
+                'title' => 'Pelatihan Komputer',
+                'content' => '100',
+                'img' => '["komputer.png"]',
+                'active' => 1
+            ],
+        ]
+        );
+
         // Prestasi
         DB::table('prestasis')->insert([
             [
@@ -395,5 +472,18 @@ class ContentSeeder extends Seeder
             ],
         ]
         );
+
+        // Kontak
+        DB::table('kontaks')->insert(
+            [
+                [
+                    'title' => 'Kontak',
+                    'alamat' => 'HOS Notosuwiryo, Purwokerto Selatan, Kruwet, Teluk, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah 53145',
+                    'email' => 'Support@Figma.com',
+                    'hp' => '+62281624540',
+                    'active' => 1
+                ],
+            ]
+            );
     }
 }

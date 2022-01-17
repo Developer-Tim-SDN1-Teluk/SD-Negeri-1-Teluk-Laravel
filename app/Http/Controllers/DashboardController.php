@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $data['header'] = Header::where('active',1)->first();
         $data['sambutan'] = Sambutan::where('active',1)->first();
         $data['total'] = TotalGuru::where('active',1)->get();
-        $data['ekstra'] = Ekstra::where('active',1)->get();
+        $data['ekstra'] = Ekstra::all()->chunk(3);
         $data['prestasi'] = Prestasi::where('active',1)->get();
         $data['berita'] = ContentBerita::where('active',1)->limit(3)->get();
         $data['kontak'] = Kontak::where('active',1)->first();

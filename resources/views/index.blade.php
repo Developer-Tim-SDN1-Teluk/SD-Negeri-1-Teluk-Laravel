@@ -82,7 +82,7 @@
                                 <span class="title-jumlah-karyawn-angka">{{ $item->content }}</span>
                             </div>
                             @empty
-                                
+
                             @endforelse
                         </div>
                     </div>
@@ -99,85 +99,20 @@
 
             <!-- List Ekstra -->
             <div class="container" style="padding-left: 80px;">
+                @foreach($data['ekstra'] as $chunk)
                 <div class="row mt-3">
+                    @foreach($chunk as $value)
                     <div class="col">
                         <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/senitari.png" width="50" alt=""> Seni Tari
+                            @foreach (json_decode($value->img) as $image)
+                                <img src="{{ url('img/photo/' . $image) }}" width="50">
+                            @endforeach
+                            {{ $value->title }}
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/pidato.png" width="50" alt=""> Pidato
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/menganyam.png" width="50" alt=""> Menganyam
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/lukis.png" width="50" alt=""> Seni Lukis
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/pantonim.png" width="50" alt=""> Pantonim
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/macapat.png" width="50" alt=""> Macapat
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/pramuka.png" width="50" alt=""> Pramuka
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/Atletik.png" width="50" alt=""> Atletik
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/Kenthongan.png" width="50" alt=""> Kenthongan
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-sm-4">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/hadroh.png" width="50" alt=""> Hadroh
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/puisi.png" width="50" alt=""> Cipta Baca Puisi
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-sm-4">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/btq.png" width="50" alt=""> BTQ
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list-ekstra">
-                            <img class="list-ekstra-img" src="{{asset('')}}assets/img/komputer.png" width="50" alt=""> Pelatihan Komputer
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
@@ -235,7 +170,7 @@
                                 </div>
                             </div>
                         @empty
-                            
+
                         @endforelse
 
                     </div>
