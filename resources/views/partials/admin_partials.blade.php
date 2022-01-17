@@ -391,7 +391,7 @@
 							<h4 class="text-section">Content Management</h4>
 						</li>
 						<li class="nav-item {{\Request::route()->getName() == 'adm.sambutan' || \Request::route()->getName() == 'adm.totalguru' ||
-							\Request::route()->getName() == 'adm.prestasi' || \Request::route()->getName() == 'adm.ekstra' ? 'active submenu' : null }}">
+							\Request::route()->getName() == 'adm.prestasi' || \Request::route()->getName() == 'adm.ekstra' || \Request::route()->getName() == 'adm.header' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentdashboard">
 								<i class="fas fa-table"></i>
 								<p>Dashboard</p>
@@ -485,7 +485,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item {{\Request::route()->getName() == 'adm.galerifoto' ? 'active submenu' : null }}">
+						<li class="nav-item {{\Request::route()->getName() == 'adm.galerifoto' || \Request::route()->getName() == 'adm.galerivideo' ? 'active submenu' : null }}">
 							<a data-toggle="collapse" href="#contentgaleri">
 								<i class="fas fa-table"></i>
 								<p>Galeri</p>

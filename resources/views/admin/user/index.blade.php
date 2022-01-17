@@ -31,7 +31,7 @@
                         <td>{{ $row->created_at }}</td>
                         <td>
                             <a href="{{ route('adm.edituser',$row->id) }}" class=" btn btn-info btn-sm">Update</a>
-                            <a href="{{ route('adm.deleteuser',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>
+                            @if($data->count()>=2))<a href="{{ route('adm.deleteuser',$row->id) }}" class=" btn btn-danger btn-sm">Delete</a>@endif
                         </td>
                     </tr>
                     @endforeach
@@ -43,7 +43,7 @@
         <script>
             $(document).ready(function() {
                 $('#basic-datatables').DataTable({});
-                
+
             });
         </script>
     @endpush

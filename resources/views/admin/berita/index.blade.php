@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $row->title }}</td>
-                        <td>{{ $row->content }}</td>
+                        <td>{{ Str::limit($row->content, 500) }}</td>
 
                         @if (!empty($row->img))
                         <td>
